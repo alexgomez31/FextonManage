@@ -1,7 +1,7 @@
 .container {
     max-width: 350px;
-    background: #4960bd;
-    background: linear-gradient(0deg, rgb(178, 219, 220) 0%, rgb(244, 247, 251) 100%);
+    background: #0031f7;
+    background: linear-gradient(0deg, rgb(178, 219, 220) 0%, rgb(163, 215, 213) 100%);
     border-radius: 40px;
     padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
@@ -135,4 +135,7 @@
     text-decoration: none;
     color: #0099ff;
     font-size: 9px;
+  }
+  .form-group{
+    margin-top: 20px;
   }
