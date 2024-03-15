@@ -1,4 +1,4 @@
-<x-guest-layout style="background-image: url('{{ asset('ruta/de/tu/imagen.jpg') }}'); background-size: cover;">
+<x-guest-layout>
     <div class="container">
 
         <!-- Session Status -->

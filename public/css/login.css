@@ -1,3 +1,8 @@
+body {
+    background-image: url('/img/pizarra.png');
+    background-size: cover; /* Para que la imagen de fondo se ajuste al tamaño de la pantalla */
+}
+
 .container {
     max-width: 350px;
     background: #0031f7;
