@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\userController;
@@ -37,3 +38,5 @@ require __DIR__.'/auth.php';
 Route::post('/useredit', [userController::class, 'actualizarperfil'])->name('profile.updatee');
 
 Route::get('producto',[ProductosController::class,'index'])->name('product.index');
+
+Route::get('categoria',[CategoriaController::class,'index'])->name('categoria.index');
