@@ -14,11 +14,12 @@
 
     @section('content')
 
-    <h1>titloe</h1>
+    <h1>Productos</h1>
     <div class="container">
         <div class="tableproduc">
-            <h3 class="text-center text-primary">lista de productos</h3>
+            <h3 class="text-center text-primary">Lista de productos</h3>
             <div class="tablelist">
+                <button type="button" class="btn btn-success mb-3">Nuevo</button>
                 <table class="table table-striped table-bordered">
                     <thead class="table-primary">
                       <tr>
@@ -48,6 +49,15 @@
                             <button type="button" class="delete-button" title="Eliminar">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
+
+                            <button type="button" class="update-button" title="Editar">
+                              <i class="fas fa-pencil-alt"></i>
+                          </button>
+
+                          <button type="button" class="view-button" title="Ver">
+                            <i class="fas fa-eye"></i>
+                        </button>
+
                         </td>
 
                       </tr>
@@ -75,6 +85,6 @@
     </div>
 
 
-    mi amor que atributos tiebe productos
+
 
     @endsection
