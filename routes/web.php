@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\userController;
+use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,14 @@ Route::post('/useredit', [userController::class, 'actualizarperfil'])->name('pro
 Route::get('producto',[ProductosController::class,'index'])->name('product.index');
 
 Route::get('categoria',[CategoriaController::class,'index'])->name('categoria.index');
+
+
+// crear productos
+Route::get('/productos/create', [ProductosController::class, 'create'])->name('productos.create');
+Route::post('/productos', [ProductosController::class, 'store'])->name('productos.store');
+
+Route::get('/productos/{producto}/edit', [ProductosController::class, 'edit'])->name('productos.edit');
+Route::put('/productos/{producto}', [ProductosController::class, 'update'])->name('productos.update');
+
+Route::delete('/productos/{producto}', [ProductosController::class, 'destroy'])->name('productos.destroy');
+

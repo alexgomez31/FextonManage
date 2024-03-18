@@ -22,7 +22,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    {{-- <script src="{{ asset('fontawesome/js/fontawesome.min.js') }}"></script> --}}
+    <script src="{{ asset('fontawesome/js/fontawesome.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     {{-- Iconos --}}
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
@@ -36,7 +37,8 @@
         @yield('perfil')
     </div>
 
-    {{-- <script src="{{ asset('js/eventos.js') }}"></script> --}}
+    <script src="{{ asset('js/alerta.js') }}"></script>
+    <script src="{{ asset('js/buscador.js') }}"></script>
 
 
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

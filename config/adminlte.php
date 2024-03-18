@@ -333,11 +333,7 @@ return [
             'url' => 'producto',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'Categoria',
-            'url' => 'categoria',
-            'icon' => 'fas fa-fw fa-tag',
-        ],
+       
         [
             'text' => 'change_password',
             'url' => 'admin/settings',
