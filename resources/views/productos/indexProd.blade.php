@@ -74,7 +74,6 @@
         </div>
     </div>
 
-
-    mi amor que atributos tiebe productos
+ningun atributo realizado para revicion 
 
     @endsection
