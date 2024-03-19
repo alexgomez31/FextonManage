@@ -1,5 +1,39 @@
 body {
-    background-image: url('/public/img/pizarra.png');
-    background-size: cover;
-    background-position: center;
+    background-image: url('../img/AdminLTELogo.png');
+    background-size: 70%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.76);
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+   top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.max-w-3xl {
+    background-color: rgba(184, 231, 213, 0.76);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 300px;
+}
+.text-gray-700 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px
+}
+.inline-flex{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(5, 99, 25);
+    font-size: 20px
+
+}
+.inline-flex:hover{
+    background-color: brown;
 }

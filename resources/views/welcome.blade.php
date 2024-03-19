@@ -20,8 +20,8 @@
     <div class="relative flex justify-center items-center min-h-screen">
         <div class="max-w-3xl w-full p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg">
             <div class="text-center mb-6">
-                <h1 class="text-3xl font-semibold text-gray-900 dark:text-gray-200">Bienvenido a</h1>
-                <h1>Fexton Manage</h1>
+                <h1 class="text-3xl font-semibold text-gray-900 dark:text-gray-200">BIENVENIDO</h1>
+            
             </div>
 
             <div class="text-gray-700 dark:text-gray-300 mb-6">
@@ -32,14 +32,11 @@
                 <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:ring ring-indigo-500 disabled:opacity-25 transition ease-in-out duration-150 mr-4">
                     Iniciar Sesión
                 </a>
-                <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:outline-none focus:border-gray-400 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+                {{-- <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-400 focus:outline-none focus:border-gray-400 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
                     Registrarse
-                </a>
+                </a> --}}
             </div>
 
-            <div class="mt-6 text-center">
-                <p class="text-sm text-gray-600 dark:text-gray-400">¿Ya tienes una cuenta? <a href="{{ route('login') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Inicia sesión aquí</a></p>
-            </div>
         </div>
     </div>
 </body>

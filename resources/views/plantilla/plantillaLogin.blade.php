@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     {{-- <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet"> --}}
 
-    <title>FextonMange</title>
+    <title>Fexton</title>
 
 </head>
 <body id="login-body">

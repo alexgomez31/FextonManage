@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     {{-- SCRIPS --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -28,7 +28,7 @@
     {{-- Iconos --}}
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
 
-    <title>FextonMange</title>
+    <title>Fexton</title>
 
 </head>
 <body id="login-body">
