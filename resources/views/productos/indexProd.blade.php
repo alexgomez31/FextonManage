@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaProfile')
-@section('title', 'perfil')
+@section('title', 'productos')
 @section('content_header')
 
     {{-- <p>Administracion de articulos</p> --}}
@@ -10,6 +10,11 @@
         {{ session('status') }}
     </div>
 @endif
+
+
+
+
+
 
 
 @section('content')
@@ -51,6 +56,7 @@
               <th scope="col">Descripción</th>
               <th scope="col">Altura</th>
               <th scope="col">Ancho</th>
+              <th scope="col">Soporte</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
@@ -64,15 +70,16 @@
               <td>{{ $producto->alto }}</td>
               <td>{{ $producto->ancho }}</td>
               <td>
-                {{-- <button type="button" class="delete-button" title="Eliminar">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-
+                @if($producto->plano)
+                    <span class="badge bg-success">PDF asociado</span>
+                @else
+                    <span class="badge bg-danger">Falta PDF</span>
+                @endif
+            </td>
+              <td>
                 
-
-                <button type="button" class="view-button" title="Ver">
-                  <i class="fas fa-eye"></i>
-                </button> --}}
+                <a href="{{ route('productos.show', $producto->id) }}" target="_blank"  class="btn btn-sm btn-primary">Ver PDF</a>
+                {{-- <a href="#" class="open-pdf" data-id="{{ $producto->id }}">Abrir PDF</a> --}}
 
                 <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">Editar</a>
                 <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">Eliminar</button>
@@ -81,13 +88,25 @@
             </tr>
             @endforeach       
           </tbody>
+          
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                @if(session('error'))
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '{{ session('error') }}'
+                    });
+                @endif
+            });
+        </script>
+          
+         
         </table>
       </div>
     </div>
   </div>
+
  
 
 @endsection
-
-
-

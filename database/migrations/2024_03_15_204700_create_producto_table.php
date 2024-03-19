@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->string('alto');
             $table->string('ancho');
+            $table->string('plano')->nullable();
             $table->timestamps();
         });
     }

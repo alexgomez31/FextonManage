@@ -52,3 +52,5 @@ Route::put('/productos/{producto}', [ProductosController::class, 'update'])->nam
 
 Route::delete('/productos/{producto}', [ProductosController::class, 'destroy'])->name('productos.destroy');
 
+// ver product
+Route::get('/productos/{id}/ver-pdf', [ProductosController::class, 'showPdf'])->name('productos.show');

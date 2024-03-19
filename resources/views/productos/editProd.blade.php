@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaProfile')
-@section('title', 'perfil')
+@section('title', 'editar product')
 @section('content_header')
 
     {{-- <p>Administracion de articulos</p> --}}
@@ -21,7 +21,7 @@
                     <div class="card-header text-center fs-6"><h2>Actualizar Producto</h2></div>
 
                     <div class="card-body">
-                        <form action="{{ route('productos.update', $producto->id) }}" method="POST">
+                        <form action="{{ route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') <!-- Agrega este campo para indicar que estás haciendo una solicitud PUT -->
 
@@ -50,6 +50,10 @@
                             <div class="form-group">
                                 <label for="ancho">ancho</label>
                                 <input id="ancho" type="text" class="form-control" name="ancho" value="{{ $producto->ancho }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="plano">Archivo PDF</label>
+                                <input id="plano" type="file" class="form-control-file" name="plano" accept=".pdf">
                             </div>
  
                             <button type="submit" class="btn btn-primary">Actualizar Producto</button>

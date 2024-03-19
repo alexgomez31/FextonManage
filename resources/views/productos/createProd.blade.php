@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaProfile')
-@section('title', 'perfil')
+@section('title', 'crear producto')
 @section('content_header')
 
     {{-- <p>Administracion de articulos</p> --}}
@@ -23,7 +23,7 @@
                     <div class="card-header text-center fs-6"><h1>Crear Nuevo Producto</h1></div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('productos.store') }}">
+                        <form method="POST" action="{{ route('productos.store') }}"  enctype="multipart/form-data">
                             @csrf
 
                             {{-- <div class="form-group">
@@ -46,20 +46,27 @@
                                 <input id="referencia" type="text" class="form-control" name="referencia" required>
                             </div>
                             <div class="form-group">
-                                <label for="descripcion">descripcion</label>
+                                <label for="descripcion">Descripcion</label>
                                 <input id="descripcion" type="text" class="form-control" name="descripcion" required>
                             </div>
                             <div class="form-group">
-                                <label for="alto">alto</label>
+                                <label for="alto">Alto</label>
                                 <input id="alto" type="text" class="form-control" name="alto" required>
                             </div>
                             <div class="form-group">
-                                <label for="ancho">ancho</label>
+                                <label for="ancho">Ancho</label>
                                 <input id="ancho" type="text" class="form-control" name="ancho" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="plano">Archivo PDF</label>
+                                <input id="plano" type="file" class="form-control-file" name="plano" accept=".pdf">
+
                             </div>
  
                             <button type="submit" class="btn btn-primary">Crear Producto</button>
                         </form>
+
+                        
                     </div>
                 </div>    
             </div>

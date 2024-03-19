@@ -20,7 +20,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Fexton</h1>
+    {{-- <h1>Fexton</h1> --}}
 
 
 @section('content')
