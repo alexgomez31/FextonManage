@@ -1,20 +1,10 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaProfile')
 @section('title', 'productos')
+@section('plugins.SweetAlert2', true)
 @section('content_header')
 
     {{-- <p>Administracion de articulos</p> --}}
-
-@if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-@endif
-
-
-
-
-
 
 
 @section('content')
@@ -78,7 +68,7 @@
             </td>
               <td>
                 
-                <a href="{{ route('productos.show', $producto->id) }}" target="_blank"  class="btn btn-sm btn-primary">Ver PDF</a>
+                <a id="mostrarPdf" href="{{ route('productos.show', $producto->id) }}" target="_blank"  class="btn btn-sm btn-primary">Ver PDF</a>
                 {{-- <a href="#" class="open-pdf" data-id="{{ $producto->id }}">Abrir PDF</a> --}}
 
                 <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">Editar</a>
@@ -88,25 +78,39 @@
             </tr>
             @endforeach       
           </tbody>
-          
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                @if(session('error'))
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: '{{ session('error') }}'
-                    });
-                @endif
-            });
-        </script>
-          
-         
+          <div id="pdfContainer" style="display: none;">
+            <embed id="pdfEmbed" src="#" type="application/pdf" width="100%" height="600px">
+          </div>
+
         </table>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          @if(session('error'))
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: '{{ session('error') }}'
+              });
+          @endif
+      });
+
+      // mostar alerta de actualizacion
+      const successMessage = '{{ Session::get('success') }}';
+      if (successMessage) {
+          setTimeout(function() {
+              Swal.fire({
+                  title: 'Éxito',
+                  text: successMessage,
+                  icon: 'success'
+              });
+          }, 2000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
+      }
+    </script>
   </div>
 
  
 
 @endsection
+

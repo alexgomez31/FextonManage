@@ -6,6 +6,7 @@ use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
 class ProductosController extends Controller
 {
@@ -87,7 +88,11 @@ class ProductosController extends Controller
         $producto->save();
 
         // Redireccionar al usuario a la lista de productos con un mensaje de éxito
-        return redirect()->route('product.index')->with('success', 'Producto creado correctamente');
+        // return redirect()->route('product.index')->with('success', 'Producto creado correctamente');
+
+
+        Session::flash('success', 'Producto creado exitosamente');
+        return redirect()->route('product.index');
     }
 
     // public function showPdf($id)
@@ -108,7 +113,8 @@ class ProductosController extends Controller
 {
     $producto = Producto::find($id);
     if (!$producto || !$producto->plano) {
-        return redirect()->back()->with('error', 'Este producto no contiene ningún archivo de soporte pdf por favor edita aquel producto y agregale su respectiv soporte.');
+        // Session::flash('error', 'saaaaaaaaa creado exitosamente');
+        return redirect()->back()->with('error', 'Este producto no contiene ningún archivo de soporte pdf por favor edita aquel producto y agregale su respectivo soporte.');
     }
 
     $pdfPath = storage_path('app/public/' . $producto->plano);
@@ -169,7 +175,9 @@ class ProductosController extends Controller
         // Actualizar los demás campos del producto
         $producto->update($request->all());
     
-        return redirect()->route('product.index')->with('success', 'Producto actualizado correctamente');
+        // return redirect()->route('product.index')->with('success', 'Producto actualizado correctamente');
+        Session::flash('success', 'Producto actualizado correctamente');
+        return redirect()->route('product.index');
     }
     
 

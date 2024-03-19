@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaProfile')
 @section('title', 'editar product')
+@section('plugins.SweetAlert2', true)
 @section('content_header')
 
     {{-- <p>Administracion de articulos</p> --}}
@@ -21,7 +22,7 @@
                     <div class="card-header text-center fs-6"><h2>Actualizar Producto</h2></div>
 
                     <div class="card-body">
-                        <form action="{{ route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
+                        <form id="frmDatoss" action="{{ route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') <!-- Agrega este campo para indicar que estás haciendo una solicitud PUT -->
 
@@ -64,4 +65,23 @@
         </div>
     </div>
 
-@endsection
+@stop
+
+{{-- @section('scripts')
+    @parent
+    <script>
+        $(document).ready(function(){
+            $('#frmDatoss').on('submit', function(e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: "¡Éxito!",
+                    text: "Actulizacion de producto",
+                    icon: "success"
+                }).then((result) => {
+                    this.submit();
+                })
+                
+            });
+        });
+    </script>
+@stop --}}

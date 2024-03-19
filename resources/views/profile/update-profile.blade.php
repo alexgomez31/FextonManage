@@ -1,15 +1,11 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaProfile')
 @section('title', 'perfil')
+@section('plugins.SweetAlert2', true)
 @section('content_header')
 
     {{-- <p>Administracion de articulos</p> --}}
 
-        @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
 
 
     @section('content')
@@ -31,7 +27,7 @@
             </form> --}}
 
             <div class="d-flex justify-content-center">
-                <form method="POST" class="form" action="{{ route('profile.updatee') }}">
+                <form id="frmDatos" method="POST" class="form" action="{{ route('profile.updatee') }}">
                     @csrf
                     {{-- @method('PUT') --}}
 
@@ -57,9 +53,6 @@
                             <label for="password" class="label">contraseña</label>
 
                         </div>
-
-
-
                     </div>
                     <button class="button" type="submit">Guardar</button>
 
@@ -124,7 +117,4 @@
     </div>
 
 
-
-
-
-@endsection
+@stop

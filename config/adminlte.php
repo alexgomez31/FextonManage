@@ -33,7 +33,7 @@ return [
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
-    /*
+    /* 
     |--------------------------------------------------------------------------
     | Google Fonts
     |--------------------------------------------------------------------------
@@ -138,7 +138,7 @@ return [
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -318,7 +318,12 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
-
+        [
+            'text' => 'Dashboard',
+            'url' => 'dashboard',
+            'icon' => 'fa-solid fa-house',
+            'label_color' => 'success',
+        ],
         [
             'text' => 'pages',
             'url' => 'admin/pages',
@@ -476,12 +481,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'asset' => true,
+                    'location' => 'vendor/sweetalert2/sweetalert2.min.js',
                 ],
             ],
         ],
