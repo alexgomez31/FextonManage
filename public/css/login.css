@@ -1,31 +1,29 @@
 body {
-    background-image: url('/img/pizarra.png');
-    background-size: cover; /* Para que la imagen de fondo se ajuste al tamaño de la pantalla */
+    background-image: url('../img/AdminLTELogo.png');
+    background-size: 70%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
-
 .container {
     max-width: 350px;
-    background: #0031f7;
     background: linear-gradient(0deg, rgb(178, 219, 220) 0%, rgb(163, 215, 213) 100%);
     border-radius: 40px;
     padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
-    margin: 20px;
-  }
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-  .heading {
-    text-align: center;
-    font-weight: 900;
-    font-size: 30px;
-    color: rgb(16, 137, 211);
-  }
-
-  .form {
+.form {
     margin-top: 20px;
-  }
+}
 
-  .form .input {
+.form .input {
     width: 100%;
     background: rgb(237, 237, 237);
     border: none;
@@ -34,34 +32,34 @@ body {
     margin-top: 15px;
     box-shadow: rgba(207, 240, 255, 0.878) 0px 10px 10px -5px;
     border: 2px solid transparent;
-  }
+}
 
-  .form .input::-moz-placeholder {
+.form .input::-moz-placeholder {
     color: rgb(170, 170, 170);
-  }
+}
 
-  .form .input::placeholder {
+.form .input::placeholder {
     color: rgb(170, 170, 170);
-  }
+}
 
-  .form .input:focus {
+.form .input:focus {
     outline: none;
     border: 2px solid #12B1D1;
-  }
+}
 
-  .form .forgot-password {
+.form .forgot-password {
     display: block;
     margin-top: 10px;
     margin-left: 10px;
-  }
+}
 
-  .form .forgot-password a {
+.form .forgot-password a {
     font-size: 11px;
     color: #0099ff;
     text-decoration: none;
-  }
+}
 
-  .form .login-button {
+.form .login-button {
     display: block;
     width: 100%;
     font-weight: bold;
@@ -73,38 +71,38 @@ body {
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
     border: none;
     transition: all 0.2s ease-in-out;
-  }
+}
 
-  .form .login-button:hover {
+.form .login-button:hover {
     transform: scale(1.03);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
-  }
+}
 
-  .form .login-button:active {
+.form .login-button:active {
     transform: scale(0.95);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
-  }
+}
 
-  .social-account-container {
+.social-account-container {
     margin-top: 25px;
-  }
+}
 
-  .social-account-container .title {
+.social-account-container .title {
     display: block;
     text-align: center;
     font-size: 10px;
     color: rgb(170, 170, 170);
-  }
+}
 
-  .social-account-container .social-accounts {
+.social-account-container .social-accounts {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 5px;
-  }
+}
 
-  .social-account-container .social-accounts .social-button {
+.social-account-container .social-accounts .social-button {
     background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
     border: 5px solid white;
     padding: 5px;
@@ -115,32 +113,29 @@ body {
     place-content: center;
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
     transition: all 0.2s ease-in-out;
-  }
+}
 
-  .social-account-container .social-accounts .social-button .svg {
+.social-account-container .social-accounts .social-button .svg {
     fill: white;
     margin: auto;
-  }
+}
 
-  .social-account-container .social-accounts .social-button:hover {
+.social-account-container .social-accounts .social-button:hover {
     transform: scale(1.2);
-  }
+}
 
-  .social-account-container .social-accounts .social-button:active {
+.social-account-container .social-accounts .social-button:active {
     transform: scale(0.9);
-  }
+}
 
-  .agreement {
+.agreement {
     display: block;
     text-align: center;
     margin-top: 15px;
-  }
+}
 
-  .agreement a {
+.agreement a {
     text-decoration: none;
     color: #0099ff;
     font-size: 9px;
-  }
-  .form-group{
-    margin-top: 20px;
-  }
+}
