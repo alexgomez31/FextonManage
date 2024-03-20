@@ -195,7 +195,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-success elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -304,9 +304,6 @@ return [
             'topnav_right' => true,
         ],
 
-
-
-
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
@@ -320,7 +317,7 @@ return [
         [
             'text' => 'Dashboard',
             'url' => 'dashboard',
-            'icon' => 'fa-solid fa-house',
+            'icon' => 'fa fa-home',
             'label_color' => 'success',
         ],
         [
