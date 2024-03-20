@@ -33,7 +33,7 @@
             </div>
 
           {{-- <input type="text" id="searchInput" class="form-control mt-3" placeholder="Buscar"> --}}
-            
+
           </div>
         </div>
 
@@ -67,16 +67,25 @@
                 @endif
             </td>
               <td>
-                
-                <a id="mostrarPdf" href="{{ route('productos.show', $producto->id) }}" target="_blank"  class="btn btn-sm btn-primary">Ver PDF</a>
+
+                <a id="mostrarPdf" href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
+                    <i class="fas fa-eye"></i>
+                </a>
+
                 {{-- <a href="#" class="open-pdf" data-id="{{ $producto->id }}">Abrir PDF</a> --}}
 
-                <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">Eliminar</button>
+                <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
+                    <i class="fas fa-edit"></i>
+                </a>
+
+                <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
 
               </td>
             </tr>
-            @endforeach       
+            @endforeach
           </tbody>
           <div id="pdfContainer" style="display: none;">
             <embed id="pdfEmbed" src="#" type="application/pdf" width="100%" height="600px">
@@ -110,7 +119,7 @@
     </script>
   </div>
 
- 
+
 
 @endsection
 
