@@ -194,6 +194,9 @@
                     <i class="fas fa-edit"></i>
                 </a>
 
+                <td>
+                    <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn btn-primary">Editar</a>
+                </td>
                 <button type="submit" class="btn btn-sm btn-danger delete-product" >
                     <i class="fas fa-trash-alt"></i>
                 </button>

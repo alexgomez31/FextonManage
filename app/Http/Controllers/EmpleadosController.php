@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class EmpleadosController extends Controller
 {
@@ -101,38 +102,85 @@ class EmpleadosController extends Controller
 
 
     public function showPdf($id, $tipoSoporte)
-{
-    $empleado = Empleado::find($id);
+    {
+        $empleado = Empleado::find($id);
 
-    // Verificar si el empleado existe
-    if (!$empleado) {
-        return redirect()->back()->with('error', 'Este empleado no existe.');
+        // Verificar si el empleado existe
+        if (!$empleado) {
+            return redirect()->back()->with('error', 'Este empleado no existe.');
+        }
+
+        // Verificar si el tipo de soporte es válido
+        if (!in_array($tipoSoporte, ['document_soport', 'contrato_soport', 'carta_soport', 'otro_si_soport', 'liquidaciones_soport'])) {
+            return redirect()->back()->with('error', 'Tipo de soporte no válido.');
+        }
+
+        // Obtener el nombre del campo de soporte en función del tipo
+        $campoSoporte = $tipoSoporte;
+
+        // Verificar si el empleado tiene un archivo de soporte asociado
+        if (!$empleado->$campoSoporte) {
+            return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
+        }
+
+        // Obtener la ruta del archivo PDF
+        $pdfPath = storage_path('app/public/' . $empleado->$campoSoporte);
+
+        // Verificar si el archivo PDF existe
+        if (!file_exists($pdfPath)) {
+            return redirect()->back()->with('error', 'El archivo PDF no existe.');
+        }
+
+        // Devolver el archivo PDF al usuario
+        return response()->file($pdfPath);
     }
 
-    // Verificar si el tipo de soporte es válido
-    if (!in_array($tipoSoporte, ['document_soport', 'contrato_soport', 'carta_soport', 'otro_si_soport', 'liquidaciones_soport'])) {
-        return redirect()->back()->with('error', 'Tipo de soporte no válido.');
+    public function editt(Empleado $empleado)
+    {
+        return view('empleados.editEmp', compact('empleado'));
     }
 
-    // Obtener el nombre del campo de soporte en función del tipo
-    $campoSoporte = $tipoSoporte;
+    public function update(Request $request, Empleado $empleado)
+    {
+        // Validar los datos del formulario
+        $request->validate([
+            'names' => 'required|string',
+            'documento' => 'required|string',
+            'numdoc' => 'required|string',
+            'cargo' => 'required|string',
+            'fecha_ingreso' => 'required|string',
+            'fecha_fin' => 'required|string',
+            'nacionalidad' => 'required|string',
+            'ciudad' => 'required|string',
+            'direccion' => 'required|string',
+            'telefono' => 'required|string',
+            'email' => 'required|email',
+            // Agrega reglas de validación para los campos de soporte PDF según tus necesidades
+        ]);
 
-    // Verificar si el empleado tiene un archivo de soporte asociado
-    if (!$empleado->$campoSoporte) {
-        return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
+        // Si se proporciona un nuevo PDF, eliminar el PDF anterior y guardar el nuevo
+        $camposSoporte = ['document_soport', 'contrato_soport', 'carta_soport', 'otro_si_soport', 'liquidaciones_soport'];
+        foreach ($camposSoporte as $campo) {
+            if ($request->hasFile($campo)) {
+                // Eliminar el archivo PDF anterior
+                if ($empleado->$campo) {
+                    Storage::delete('public/' . $empleado->$campo);
+                }
+                // Guardar el nuevo archivo PDF
+                $pdfPath = $request->file($campo)->store('public/pdfs');
+                $empleado->$campo = str_replace('public/', '', $pdfPath);
+            }
+        }
+
+        // Actualizar los demás campos del empleado
+        $empleado->update($request->all());
+
+        // Redireccionar al usuario con un mensaje de éxito
+        // return redirect()->back()->with('success', 'Empleado actualizado correctamente');
+        Session::flash('success', 'Empleado actualizado correctamente');
+        return redirect()->route('empleados.index');
     }
 
-    // Obtener la ruta del archivo PDF
-    $pdfPath = storage_path('app/public/' . $empleado->$campoSoporte);
-
-    // Verificar si el archivo PDF existe
-    if (!file_exists($pdfPath)) {
-        return redirect()->back()->with('error', 'El archivo PDF no existe.');
-    }
-
-    // Devolver el archivo PDF al usuario
-    return response()->file($pdfPath);
-}
 
 
 

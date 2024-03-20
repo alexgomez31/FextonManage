@@ -69,6 +69,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/empleados/showPdf/{id}/{tipoSoporte}', [EmpleadosController::class, 'showPdf'])->name('empleado.showPdf');
 
 
+    // editar productos
+
+    Route::get('/empleados/{empleado}/edit', [EmpleadosController::class, 'editt'])->name('empleados.edit');
+    Route::put('/empleados/{empleado}', [EmpleadosController::class, 'update'])->name('empleados.update');
+
 });
 
 require __DIR__.'/auth.php';
