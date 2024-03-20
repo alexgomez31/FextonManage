@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Fexton Manage',
+    'title' => 'Fexton',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -33,7 +33,7 @@ return [
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
-    /* 
+    /*
     |--------------------------------------------------------------------------
     | Google Fonts
     |--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Fexton</b>Manage',
+
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-',
     'logo_img_xl' => null,
@@ -191,12 +191,12 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-white',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-success elevation-4',
+    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -305,6 +305,9 @@ return [
             'topnav_right' => true,
         ],
 
+
+
+
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
@@ -316,9 +319,9 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Dashboard',
+            'text' => 'MENU',
             'url' => 'dashboard',
-            'icon' => 'fa fa-home',
+            'icon' => 'fa-solid fa-house',
             'label_color' => 'success',
         ],
         [
@@ -333,18 +336,16 @@ return [
         [
             'text' => 'Productos',
             'url' => 'producto',
-            'icon' => 'fab fa-product-hunt ',
-        ],
-        [
-            'text' => 'Empleados',
-            'url' => 'empleados',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-tree',
+            
+
         ],
         ['header' => 'AÑADIDURAS'],
         [
-            'text' => 'change_password',
+            'text' => 'employe',
             'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-users',
+
         ],
         [
             'text' => 'multilevel',

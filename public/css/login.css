@@ -8,14 +8,16 @@ body {
 }
 .container {
     max-width: 350px;
-    background: linear-gradient(0deg, rgb(178, 219, 220) 0%, rgb(163, 215, 213) 100%);
+    background: linear-gradient(0deg, rgb(164, 201, 204) 0%, rgb(215, 243, 243) 100%);
     border-radius: 40px;
     padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
-    position: fixed;
+    position: relative;
+    margin-top: 550px;
     bottom: 0;
     left: 50%;
+
     transform: translateX(-50%);
 }
 
@@ -138,4 +140,32 @@ body {
     text-decoration: none;
     color: #0099ff;
     font-size: 9px;
+}
+
+.ms-3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(5, 99, 25);
+    font-size: 20px;
+    border-radius: 15px;
+    width: 120px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: block;
+    color: white;
+}
+
+.ms-3:hover{
+    background-color: rgb(192, 36, 36);
+}
+
+.form-group {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: block;
 }

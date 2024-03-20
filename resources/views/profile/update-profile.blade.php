@@ -13,10 +13,10 @@
     <div class="containerr">
         <div class="left">
             <div class="encabezado ">
-                <h1 class="text-center" style="color: #ffff">Ajustes de Perfil</h1>
+                <h1 class="text-center">Ajustes de Perfil</h1>
 
                 <p class="mt-2" >
-                    <p class="text-center" style="color: rgba(255, 255, 255, 0.603)">
+                    <p class="text-center">
                         {{ __("Actualiza la información del perfil y la dirección de correo electrónico de tu cuenta.") }}
                     </p>
                 </p>

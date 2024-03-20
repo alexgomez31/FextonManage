@@ -1,5 +1,5 @@
 .containerr {
-    
+
     display: flex;
     width: 100%;
     /* height: 500px; */
@@ -8,23 +8,26 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background-color: #ffffff25;
+    background-color: #aee2e225;
     border-radius: 15px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
     border: 0.1px solid rgba(128, 128, 128, 0.178);
 
   }
-
+.text-center{
+    color:  rgb(5, 99, 25);
+}
   .containerrra{
-    background-color: rgb(97, 204, 142);
+    background-color: rgb(5, 99, 25);
     width: 100%;
     height: 10px;
 
   }
-  .encabezado{
-    background-color: rgb(97, 204, 204);
+  .encabezado {
+    background-color: rgba(226, 226, 226, 0.616);
     height: 7rem;
-  }
+
+}
 
   .left {
     width: 66%;
@@ -53,8 +56,8 @@
     z-index: -1;
     background: radial-gradient(
       circle,
-      #64f262 20%,
-      rgb(26, 235, 169) 60%,
+      #62f2e6 20%,
+      rgb(235, 235, 235) 60%,
 
       rgb(235, 26, 26) 100%
     );
@@ -83,7 +86,7 @@
     background: radial-gradient(
       circle,
       rgb(157, 203, 196) 61%,
-      #65f262 100%
+      rgb(5, 99, 25)
     );
     z-index: 0;
     border-radius: 50%;
@@ -100,7 +103,7 @@
     margin: 10px auto;
     width: 60%;
     display: block;
-    color: rgb(97, 204, 142);
+    color: rgb(204, 97, 97);
     font-weight: 500;
     font-size: 1.1em;
     margin-bottom: 60px;
@@ -108,11 +111,16 @@
 
 
   .button {
-    background-color:#0073ff;
+    width:  200px;
+    background-color:rgb(5, 99, 25);
     color: white;
-    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
     box-shadow: 2px 4px 8px rgba(70, 70, 70, 0.178);
   }
+  .button:hover{
+    background-color: brown;
+}
 
   a {
     color: #5e7eb6;
@@ -128,7 +136,7 @@
     gap: 7px;
     position: relative;
     color:#506869;
-    
+
 
   }
   .formjunt{
@@ -183,9 +191,9 @@
     line-height: 28px;
     align-items: center;
     position: relative;
-    
+
   }
-  
+
   .inputt {
     width: 100%;
     height: 40px;
@@ -199,11 +207,11 @@
     color: #0d0c22;
     transition: 0.3s ease;
   }
-  
+
   .inputt::placeholder {
     color: #9e9ea7;
   }
-  
+
   .inputt:focus,
   inputt:hover {
     outline: none;
@@ -211,7 +219,7 @@
     background-color: #fff;
     box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
   }
-  
+
   .icon {
     position: absolute;
     left: 1rem;
@@ -219,7 +227,7 @@
     width: 1rem;
     height: 1rem;
   }
-  
+
 
 
 

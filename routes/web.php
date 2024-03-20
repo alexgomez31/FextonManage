@@ -36,32 +36,29 @@ Route::middleware('auth')->group(function () {
 
 
 
-
     Route::post('/useredit', [userController::class, 'actualizarperfil'])->name('profile.updatee');
 
-Route::get('producto',[ProductosController::class,'index'])->name('product.index');
+    Route::get('producto',[ProductosController::class,'index'])->name('product.index');
+
+    // crear productos
+    Route::get('/productos/create', [ProductosController::class, 'create'])->name('productos.create');
+    Route::post('/productos', [ProductosController::class, 'store'])->name('productos.store');
+
+    // buscar productos
+    Route::get('/productos/search', [ProductosController::class, 'search'])->name('productos.search');
+
+    // editar productos
+    Route::get('/productos/{producto}/edit', [ProductosController::class, 'edit'])->name('productos.edit');
+    Route::put('/productos/{producto}', [ProductosController::class, 'update'])->name('productos.update');
+
+    //eliminar productos
+
+    // ver product
+    Route::get('/productos/{id}/ver-pdf', [ProductosController::class, 'showPdf'])->name('productos.show');
 
 
-
-// crear productos
-Route::get('/productos/create', [ProductosController::class, 'create'])->name('productos.create');
-Route::post('/productos', [ProductosController::class, 'store'])->name('productos.store');
-
-// buscar productos
-Route::get('/productos/search', [ProductosController::class, 'search'])->name('productos.search');
-
-// editar productos
-Route::get('/productos/{producto}/edit', [ProductosController::class, 'edit'])->name('productos.edit');
-Route::put('/productos/{producto}', [ProductosController::class, 'update'])->name('productos.update');
-
-//eliminar productos
-
-// ver product
-Route::get('/productos/{id}/ver-pdf', [ProductosController::class, 'showPdf'])->name('productos.show');
-
-
-// ruta empleados
-Route::get('empleados',[EmpleadosController::class,'index'])->name('empleados.index');
+    // ruta empleados
+    Route::get('empleados',[EmpleadosController::class,'index'])->name('empleados.index');
 
 });
 
