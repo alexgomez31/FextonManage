@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="card m-4">
-                    <div class="card-header text-center fs-6"><h1>Crear Nuevo Producto</h1></div>
+                    <div class="card-header text-center fs-6"><h1>Registrar Empleado</h1></div>
 
                     <div class="card-body">
                         <form action="{{ route('empleado.store') }}" method="POST" enctype="multipart/form-data">
@@ -92,7 +92,7 @@
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </form>
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
     </div>

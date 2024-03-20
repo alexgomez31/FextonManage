@@ -28,7 +28,7 @@
             </div>
 
             <div class="">
-              <a href="{{route('empleados.create')}}" class="btn btn-success">Crear Nuevo Empleado</a>
+              <a href="{{route('empleados.create')}}" class="btn btn-success">Registrar Empleado</a>
             </div>
 
           {{-- <input type="text" id="searchInput" class="form-control mt-3" placeholder="Buscar"> --}}
@@ -36,29 +36,30 @@
           </div>
         </div>
 
-        <table id="empleados" class="table table-striped table-bordered mt-4">
-          <thead class="table-primary">
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Nombres apellidos</th>
-              <th scope="col">Documento</th>
-              <th scope="col">N# documento</th>
-              <th scope="col">Cargo</th>
-              <th scope="col">Fecha ing</th>
-              <th scope="col">Fecha fin</th>
-              <th scope="col">Nacionalidad</th>
-              <th scope="col">Ciudad</th>
-              <th scope="col">Direccion</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Documento soport</th>
-              <th scope="col">Contrato soporte</th>
-              <th scope="col">Carta soporte</th>
-              <th scope="col">Otro si soporte</th>
-              <th scope="col">Liquidaciones</th>
-              <th scope="col">Acciones</th>
-            </tr>
-          </thead>
+        <div class="table-responsive"> <!-- Agregar la clase table-responsive -->
+          <table id="empleados" class="table table-striped table-bordered mt-4">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombres apellidos</th>
+                <th scope="col">Documento</th>
+                <th scope="col">N° documento</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Fecha ing</th>
+                <th scope="col">Fecha fin</th>
+                <th scope="col">Nacionalidad</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Documento soport</th>
+                <th scope="col">Contrato soporte</th>
+                <th scope="col">Carta soporte</th>
+                <th scope="col">Otro si soporte</th>
+                <th scope="col">Liquidaciones</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
           <tbody class="table-group-divider" id="tableBody">
             @foreach($empleados as $empleado)
             <tr>
@@ -85,7 +86,7 @@
                     {{ $empleado->numdoc }}
                 @endif
               </td>
-            
+
               <td>
                 @if(strlen($empleado->cargo) > 12)
                     {{ substr($empleado->cargo, 0, 12) }}...
@@ -93,7 +94,7 @@
                     {{ $empleado->cargo }}
                 @endif
               </td>
-            
+
               <td>
                   @if(strlen($empleado->fecha_ingreso) > 12)
                       {{ substr($empleado->fecha_ingreso, 0, 12) }}...
@@ -143,7 +144,7 @@
                         {{ $empleado->email }}
                     @endif
                 </td>
-                
+
               <td>
                 @if($empleado->document_soport)
                     <span class="badge bg-success">PDF asociado</span>
@@ -186,8 +187,8 @@
                 </a> --}}
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verEmpleadoModal{{ $empleado->id }}">
 
-    
-                      
+
+
                 {{-- <a href="#" class="open-pdf" data-id="{{ $empleado->id }}">Abrir PDF</a> --}}
 
                 <a href="#" class="btn btn-sm btn-warning">
@@ -208,7 +209,7 @@
           </tbody>
 
         </table>
-        
+
         {{-- <div class="d-flex justify-content-center">
 
           <!-- Personalizar la paginación -->
@@ -217,14 +218,14 @@
               <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
                   <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
               </li>
-              
+
               <!-- Mostrar los números de página -->
               @for ($i = 1; $i <= $totalPages; $i++)
                   <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
                       <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
                   </li>
               @endfor
-  
+
               <!-- Enlace a la página siguiente -->
               <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
                   <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
@@ -255,10 +256,10 @@
                 <div class="modal-body">
                     <p><strong>Documento:</strong> {{ $empleado->documento }}</p>
                     <!-- Agrega más detalles según tus necesidades -->
-    
+
                     <!-- Listar todos los tipos de soporte disponibles -->
                     <div>
-                        <p><strong>Document Soport:</strong> 
+                        <p><strong>Document Soport:</strong>
                             @if ($empleado->document_soport)
                                 <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'document_soport')">Ver PDF</button>
                             @else
@@ -267,7 +268,7 @@
                         </p>
                     </div>
                     <div>
-                        <p><strong>Contrato Soport:</strong> 
+                        <p><strong>Contrato Soport:</strong>
                             @if ($empleado->contrato_soport)
                                 <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'contrato_soport')">Ver PDF</button>
                             @else
@@ -276,7 +277,7 @@
                         </p>
                     </div>
                     <div>
-                        <p><strong>Otro Si Soport:</strong> 
+                        <p><strong>Otro Si Soport:</strong>
                             @if ($empleado->otro_si_soport)
                                 <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'otro_si_soport')">Ver PDF</button>
                             @else
@@ -285,7 +286,7 @@
                         </p>
                     </div>
                     <div>
-                        <p><strong>Liquidaciones Soport:</strong> 
+                        <p><strong>Liquidaciones Soport:</strong>
                             @if ($empleado->liquidaciones_soport)
                                 <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'liquidaciones_soport')">Ver PDF</button>
                             @else
@@ -294,7 +295,7 @@
                         </p>
                     </div>
                 </div>
-               
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -303,7 +304,7 @@
     </div>
 </div>
 @endforeach
-    
+
 
     <script>
         function mostrarPdf(id, tipoSoporte) {
