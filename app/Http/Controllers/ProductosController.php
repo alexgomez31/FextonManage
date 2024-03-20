@@ -174,7 +174,7 @@ class ProductosController extends Controller
 
         // Actualizar los demás campos del producto
         $producto->update($request->all());
-    
+
         // return redirect()->route('product.index')->with('success', 'Producto actualizado correctamente');
         Session::flash('success', 'Producto actualizado correctamente');
         return redirect()->route('product.index');
@@ -201,3 +201,4 @@ class ProductosController extends Controller
 
 
 }
+
