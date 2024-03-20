@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Fexton Manage',
+    'title' => 'Fexton',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -33,7 +33,7 @@ return [
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
-    /* 
+    /*
     |--------------------------------------------------------------------------
     | Google Fonts
     |--------------------------------------------------------------------------
@@ -63,7 +63,6 @@ return [
     |
     */
 
-    'logo' => '<b>Fexton</b>Manage',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-',
     'logo_img_xl' => null,
@@ -191,7 +190,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-white',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
