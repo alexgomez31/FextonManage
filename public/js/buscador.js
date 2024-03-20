@@ -28,14 +28,15 @@ $(document).ready(function() {
                   row += '<td>' + producto.referencia + '</td>';
                   row += '<td>' + producto.descripcion + '</td>';
                   row += '<td>' + producto.alto + '</td>';
-                  row += '<td>' + producto.ancho + '</td>';
+                  row += '<td>' + producto.ramas + '</td>';
+                  row += '<td>' + producto.materiales + '</td>';
                   row += '<td>';
                   row += producto.plano ? '<span class="badge bg-success">PDF asociado</span>' : '<span class="badge bg-danger">Falta PDF</span>';
                   row += '</td>';
                   row += '<td>';
                   row += '<a id="mostrarPdf" href="/productos/' + producto.id + '/ver-pdf" target="_blank" class="btn btn-sm btn-primary">Ver PDF</a>';
                   row += '<a href="/productos/' + producto.id + '/edit" class="btn btn-sm btn-warning">Editar</a>';
-                  row += '<button type="button" class="btn btn-sm btn-danger delete-productt" data-id="' + producto.id + '" data-tipoproducto="' + producto.tipoproducto + '" data-referencia="' + producto.referencia + '" data-url="/productos/' + producto.id + '">Eliminar</button></td>';    
+                  row += '<button type="button" class="btn btn-sm btn-danger delete-productt" data-id="' + producto.id + '" data-tipoproducto="' + producto.tipoproducto + '" data-referencia="' + producto.referencia + '" data-url="/productos/' + producto.id + '">Eliminar</button></td>';
                   row += '</td>';
                   row += '</tr>';
                   $('#tableBody').append(row);

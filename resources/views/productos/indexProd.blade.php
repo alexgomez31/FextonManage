@@ -45,7 +45,8 @@
               <th scope="col">Referencia</th>
               <th scope="col">Descripción</th>
               <th scope="col">Altura</th>
-              <th scope="col">Ancho</th>
+              <th scope="col">Numero de ramas</th>
+              <th scope="col">Materiales</th>
               <th scope="col">Soporte</th>
               <th scope="col">Acciones</th>
             </tr>
@@ -76,7 +77,7 @@
                     {{ $producto->descripcion }}
                 @endif
               </td>
-            
+
               <td>
                 @if(strlen($producto->alto) > 12)
                     {{ substr($producto->alto, 0, 12) }}...
@@ -84,15 +85,23 @@
                     {{ $producto->alto }}
                 @endif
               </td>
-            
+
               <td>
-                  @if(strlen($producto->ancho) > 12)
-                      {{ substr($producto->ancho, 0, 12) }}...
+                  @if(strlen($producto->ramas) > 12)
+                      {{ substr($producto->ramas, 0, 12) }}...
                   @else
-                      {{ $producto->ancho }}
+                      {{ $producto->ramas }}
                   @endif
               </td>
-            
+
+              <td>
+                @if(strlen($producto->materiales) > 12)
+                    {{ substr($producto->materiales, 0, 12) }}...
+                @else
+                    {{ $producto->materiales }}
+                @endif
+            </td>
+
               <td>
                 @if($producto->plano)
                     <span class="badge bg-success">PDF asociado</span>
@@ -126,7 +135,7 @@
           </div>
 
         </table>
-        
+
         <div class="d-flex justify-content-center">
 
           <!-- Personalizar la paginación -->
@@ -135,14 +144,14 @@
               <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
                   <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
               </li>
-              
+
               <!-- Mostrar los números de página -->
               @for ($i = 1; $i <= $totalPages; $i++)
                   <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
                       <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
                   </li>
               @endfor
-  
+
               <!-- Enlace a la página siguiente -->
               <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
                   <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
@@ -151,10 +160,10 @@
       </div>
       </div>
     </div>
-    
+
 
     <script>
-      
+
 
       // mostar alerta de actualizacion
       const successMessage = '{{ Session::get('success') }}';
