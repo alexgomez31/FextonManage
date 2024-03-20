@@ -28,7 +28,8 @@ class ProductosController extends Controller
                               ->orWhere('referencia', 'like', "%$term%")
                               ->orWhere('descripcion', 'like', "%$term%")
                               ->orWhere('alto', 'like', "%$term%")
-                              ->orWhere('ancho', 'like', "%$term%")
+                              ->orWhere('ramas', 'like', "%$term%")
+                              ->orWhere('materiales', 'like', "%$term%")
                               ->get();
 
         return response()->json($productos);
@@ -49,7 +50,8 @@ class ProductosController extends Controller
             'referencia' => 'required|string',
             'descripcion' => 'required|string',
             'alto' => 'required|string',
-            'ancho' => 'required|string',
+            'ramas' => 'required|string',
+            'materiales'=> 'required|string',
             'plano' => 'nullable|file|mimes:pdf|max:2048',
         ]);
 
@@ -68,7 +70,8 @@ class ProductosController extends Controller
         $producto->referencia = $request->referencia;
         $producto->descripcion = $request->descripcion;
         $producto->alto = $request->alto;
-        $producto->ancho = $request->ancho;
+        $producto->ramas = $request->ramas;
+        $producto->materiales = $request->materiales;
         // Asignar la ruta del archivo al campo 'plano'
         $producto->plano = $planoPath ? str_replace('public/', '', $planoPath) : null;
         $producto->save();
@@ -128,7 +131,9 @@ class ProductosController extends Controller
             'referencia' =>'required|string',
             'descripcion' =>'required|string',
             'alto' =>'required|string',
-            'ancho' =>'required|string',
+            'ramas' => 'required|string',
+            'materiales'=> 'required|string',
+
             'plano' => 'nullable|file|mimes:pdf|max:2048',
         ]);
 
@@ -180,8 +185,8 @@ class ProductosController extends Controller
     // Devolver una respuesta JSON indicando que el producto se eliminó correctamente
     return response()->json(['success' => 'Producto eliminado satisfactoriamente']);
 }
-    
-    
+
+
 
 
 

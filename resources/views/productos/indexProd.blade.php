@@ -45,8 +45,9 @@
               <th scope="col">Referencia</th>
               <th scope="col">Descripción</th>
               <th scope="col">Altura</th>
-              <th scope="col">Ancho</th>
-              <th scope="col">Soporte</th>
+              <th scope="col">Numero de ramas</th>
+              <th scope="col">Materiales</th>
+              <th scope="col">Plano</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
@@ -76,7 +77,7 @@
                     {{ $producto->descripcion }}
                 @endif
               </td>
-            
+
               <td>
                 @if(strlen($producto->alto) > 12)
                     {{ substr($producto->alto, 0, 12) }}...
@@ -84,15 +85,23 @@
                     {{ $producto->alto }}
                 @endif
               </td>
-            
+
               <td>
-                  @if(strlen($producto->ancho) > 12)
-                      {{ substr($producto->ancho, 0, 12) }}...
+                  @if(strlen($producto->ramas) > 12)
+                      {{ substr($producto->ramas, 0, 12) }}...
                   @else
-                      {{ $producto->ancho }}
+                      {{ $producto->ramas }}
                   @endif
               </td>
-            
+
+              <td>
+                @if(strlen($producto->materiales) > 12)
+                    {{ substr($producto->materiales, 0, 12) }}...
+                @else
+                    {{ $producto->materiales }}
+                @endif
+            </td>
+
               <td>
                 @if($producto->plano)
                     <span class="badge bg-success">PDF asociado</span>
@@ -102,11 +111,15 @@
               </td>
               <td>
 
-                <a id="mostrarPdf" href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
-                    <i class="fas fa-eye"></i>
-                </a>
-
-                {{-- <a href="#" class="open-pdf" data-id="{{ $producto->id }}">Abrir PDF</a> --}}
+                @if($producto->plano)
+                    <a href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
+                        <i class="fas fa-eye"></i> Ver PDF
+                    </a>
+                @else
+                    <button class="btn btn-sm btn-warning show-pdf-alert" data-producto-id="{{ $producto->id }}">
+                        <i class="fas fa-exclamation-triangle"></i> No hay PDF
+                    </button>
+                @endif
 
                 <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
                     <i class="fas fa-edit"></i>
@@ -126,7 +139,7 @@
           </div>
 
         </table>
-        
+
         <div class="d-flex justify-content-center">
 
           <!-- Personalizar la paginación -->
@@ -135,50 +148,50 @@
               <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
                   <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
               </li>
-              
+
               <!-- Mostrar los números de página -->
               @for ($i = 1; $i <= $totalPages; $i++)
-                  <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
-                      <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
-                  </li>
-              @endfor
-  
-              <!-- Enlace a la página siguiente -->
-              <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
-                  <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
-              </li>
-          </ul>
-      </div>
-      </div>
-    </div>
-    
-    <script>
-          document.addEventListener('DOMContentLoaded', function () {
-          @if(session('error'))
-              Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: '{{ session('error') }}'
-              });
-          @endif
+              <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
+                <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
+            </li>
+        @endfor
+
+        <!-- Enlace a la página siguiente -->
+        <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
+            <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+
+
+<script>
+  $(document).ready(function() {
+      $('.show-pdf-alert').click(function() {
+          var productoId = $(this).data('producto-id');
+          Swal.fire({
+              title: 'Alerta',
+              text: 'No hay plano cargado para este producto.',
+              icon: 'warning',
+              confirmButtonText: 'OK'
+          });
       });
-      
+  });
+</script>
 
-      // mostar alerta de actualizacion
-      const successMessage = '{{ Session::get('success') }}';
-      if (successMessage) {
-          setTimeout(function() {
-              Swal.fire({
-                  title: 'Éxito',
-                  text: successMessage,
-                  icon: 'success'
-              });
-          }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
-      }
-    </script>
-  </div>
+{{-- mostar alerta de actualizacion --}}
+<script>
+  const successMessage = '{{ Session::get('success') }}';
+  if (successMessage) {
+      setTimeout(function() {
+          Swal.fire({
+              title: 'Éxito',
+              text: successMessage,
+              icon: 'success'
+          });
+      }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
+  }
+</script>
+</div>
 @endsection
-
-
-
-

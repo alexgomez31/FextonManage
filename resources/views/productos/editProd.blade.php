@@ -35,13 +35,13 @@
                                     <option value="guirnalda" @if($producto->tipoproducto == 'guirnalda') selected @endif>Guirnalda</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="referencia">Referencia</label>
                                 <input id="referencia" type="text" class="form-control" name="referencia" value="{{ $producto->referencia }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="descripcion">descripcion</label>
+                                <label for="descripcion">Descripcion</label>
                                 <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{ $producto->descripcion }}" required>
                             </div>
                             <div class="form-group">
@@ -49,18 +49,22 @@
                                 <input id="alto" type="text" class="form-control" name="alto" value="{{ $producto->alto }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="ancho">ancho</label>
-                                <input id="ancho" type="text" class="form-control" name="ancho" value="{{ $producto->ancho }}" required>
+                                <label for="ramas">Numero de ramas</label>
+                                <input id="ramas" type="text" class="form-control" name="ramas" value="{{ $producto->ramas }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="materiales">Materiales</label>
+                                <input id="materiales" type="text" class="form-control" name="materiales" value="{{ $producto->materiales }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="plano">Archivo PDF</label>
                                 <input id="plano" type="file" class="form-control-file" name="plano" accept=".pdf">
                             </div>
- 
+
                             <button type="submit" class="btn btn-primary">Actualizar Producto</button>
                         </form>
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
     </div>
@@ -80,7 +84,7 @@
                 }).then((result) => {
                     this.submit();
                 })
-                
+
             });
         });
     </script>

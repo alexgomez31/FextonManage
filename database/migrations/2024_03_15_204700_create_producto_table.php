@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('referencia');
             $table->string('descripcion');
             $table->string('alto');
-            $table->string('ancho');
+            $table->string('ramas');
+            $table->string('materiales');
+
             $table->string('plano')->nullable();
             $table->timestamps();
         });

@@ -10,14 +10,15 @@ class Producto extends Model
     use HasFactory;
     protected $table = 'producto';
     protected $primaryKey = 'id';
-    public $timestamps = false; 
+    public $timestamps = false;
 
     protected $fillable = [
         'tipoproducto',
         'referencia',
         'descripcion',
         'alto',
-        'ancho',
+        'ramas',
+        'materiales'
     ];
 
 }
