@@ -60,6 +60,15 @@ Route::middleware('auth')->group(function () {
     // ruta empleados
     Route::get('empleados',[EmpleadosController::class,'index'])->name('empleados.index');
 
+    // crear empleados
+    Route::get('/empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
+    Route::post('/productos', [EmpleadosController::class, 'store'])->name('empleado.store');
+
+    // ver pdfs 
+    // Route::get('/empleados/{id}/showPdf', [EmpleadosController::class, 'showPdfDocumentoSoport'])->name('empleado.showPdf');
+    Route::get('/empleados/showPdf/{id}/{tipoSoporte}', [EmpleadosController::class, 'showPdf'])->name('empleado.showPdf');
+
+
 });
 
 require __DIR__.'/auth.php';

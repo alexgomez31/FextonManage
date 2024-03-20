@@ -152,8 +152,16 @@
       </div>
     </div>
     
-
     <script>
+          document.addEventListener('DOMContentLoaded', function () {
+          @if(session('error'))
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: '{{ session('error') }}'
+              });
+          @endif
+      });
       
 
       // mostar alerta de actualizacion

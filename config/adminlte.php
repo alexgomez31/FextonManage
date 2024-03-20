@@ -343,7 +343,7 @@ return [
         ['header' => 'AÑADIDURAS'],
         [
             'text' => 'employe',
-            'url' => 'admin/settings',
+            'url' => 'empleados',
             'icon' => 'fas fa-fw fa-users',
 
         ],

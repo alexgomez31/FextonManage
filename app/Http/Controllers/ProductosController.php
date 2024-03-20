@@ -95,6 +95,7 @@ class ProductosController extends Controller
     //     $pdfUrl = storage_path('app/public/' . $producto->plano);
     //     return response()->file($pdfUrl);
     // }
+    
     public function showPdf($id)
     {
         $producto = Producto::find($id);
