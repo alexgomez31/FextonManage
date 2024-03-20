@@ -41,7 +41,7 @@
                                 <input id="referencia" type="text" class="form-control" name="referencia" value="{{ $producto->referencia }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="descripcion">descripcion</label>
+                                <label for="descripcion">Descripcion</label>
                                 <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{ $producto->descripcion }}" required>
                             </div>
                             <div class="form-group">
