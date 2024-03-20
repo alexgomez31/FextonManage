@@ -9,10 +9,10 @@
 
 @section('content')
 
-  <h1>Productos</h1>
+  {{-- <h1>Productos</h1> --}}
   <div class="container">
     <div class="tableproduc">
-      <h3 class="text-center text-primary">Lista de productos</h3>
+      <h3 class="text-center text-primary"><h1>Lista de productos</h1></h3>
       <div class="tablelist">
         {{-- <button type="submit" href="{{ route('productos.create') }}" class="btn btn-success mb-3">Nuevo</button> --}}
         <div class="container text-center">
