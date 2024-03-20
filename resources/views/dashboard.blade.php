@@ -1,6 +1,6 @@
 
 @extends('adminlte::page')
-@extends('plantilla.plantillaProfile')
+@extends('plantilla.plantillaDashboard')
 @section('title', 'Dashboard')
 @section('plugins.SweetAlert2', true)
 

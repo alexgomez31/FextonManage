@@ -12,7 +12,7 @@
   {{-- <h1>Productos</h1> --}}
   <div class="container">
     <div class="tableproduc">
-      <h3 class="text-center text-primary"><h1>Lista de productos</h1></h3>
+      <h1 class="text-center text-primary mt-4">Lista de productos</h1>
       <div class="tablelist">
         {{-- <button type="submit" href="{{ route('productos.create') }}" class="btn btn-success mb-3">Nuevo</button> --}}
         <div class="container text-center">
@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <table class="table table-striped table-bordered mt-4">
+        <table id="productos" class="table table-striped table-bordered mt-4">
           <thead class="table-primary">
             <tr>
               <th scope="col">Id</th>
@@ -54,18 +54,52 @@
             @foreach($productos as $producto)
             <tr>
               <th scope="row">{{ $producto->id }}</th>
-              <td>{{ $producto->tipoproducto }}</td>
-              <td>{{ $producto->referencia }}</td>
-              <td>{{ $producto->descripcion }}</td>
-              <td>{{ $producto->alto }}</td>
-              <td>{{ $producto->ancho }}</td>
+              {{-- <td>{{ $producto->tipoproducto }}</td> --}}
+              <td>
+                @if(strlen($producto->tipoproducto) > 16)
+                    {{ substr($producto->tipoproducto, 0, 15) }}...
+                @else
+                    {{ $producto->tipoproducto }}
+                @endif
+            </td>
+              <td>
+                @if(strlen($producto->referencia) > 12)
+                    {{ substr($producto->referencia, 0, 12) }}...
+                @else
+                    {{ $producto->referencia }}
+                @endif
+              </td>
+              <td>
+                @if(strlen($producto->descripcion) > 12)
+                    {{ substr($producto->descripcion, 0, 12) }}...
+                @else
+                    {{ $producto->descripcion }}
+                @endif
+              </td>
+            
+              <td>
+                @if(strlen($producto->alto) > 12)
+                    {{ substr($producto->alto, 0, 12) }}...
+                @else
+                    {{ $producto->alto }}
+                @endif
+              </td>
+            
+              <td>
+                  @if(strlen($producto->ancho) > 12)
+                      {{ substr($producto->ancho, 0, 12) }}...
+                  @else
+                      {{ $producto->ancho }}
+                  @endif
+              </td>
+            
               <td>
                 @if($producto->plano)
                     <span class="badge bg-success">PDF asociado</span>
                 @else
                     <span class="badge bg-danger">Falta PDF</span>
                 @endif
-            </td>
+              </td>
               <td>
                 
                 <a id="mostrarPdf" href="{{ route('productos.show', $producto->id) }}" target="_blank"  class="btn btn-sm btn-primary">Ver PDF</a>
@@ -83,18 +117,35 @@
           </div>
 
         </table>
+        
+        <div class="d-flex justify-content-center">
+
+          <!-- Personalizar la paginación -->
+          <ul class="pagination">
+              <!-- Enlace a la página anterior -->
+              <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
+                  <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
+              </li>
+              
+              <!-- Mostrar los números de página -->
+              @for ($i = 1; $i <= $totalPages; $i++)
+                  <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
+                      <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
+                  </li>
+              @endfor
+  
+              <!-- Enlace a la página siguiente -->
+              <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
+                  <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
+              </li>
+          </ul>
+      </div>
       </div>
     </div>
+    
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          @if(session('error'))
-              Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: '{{ session('error') }}'
-              });
-          @endif
-      });
+      
 
       // mostar alerta de actualizacion
       const successMessage = '{{ Session::get('success') }}';
@@ -105,12 +156,12 @@
                   text: successMessage,
                   icon: 'success'
               });
-          }, 2000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
+          }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
       }
     </script>
   </div>
-
- 
-
 @endsection
+
+
+
 

@@ -333,9 +333,14 @@ return [
         [
             'text' => 'Productos',
             'url' => 'producto',
+            'icon' => 'fab fa-product-hunt ',
+        ],
+        [
+            'text' => 'Empleados',
+            'url' => 'empleados',
             'icon' => 'fas fa-fw fa-user',
         ],
-
+        ['header' => 'AÑADIDURAS'],
         [
             'text' => 'change_password',
             'url' => 'admin/settings',
