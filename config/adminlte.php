@@ -319,7 +319,7 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Dashboard',
+            'text' => 'MENU',
             'url' => 'dashboard',
             'icon' => 'fa-solid fa-house',
             'label_color' => 'success',
@@ -336,13 +336,15 @@ return [
         [
             'text' => 'Productos',
             'url' => 'producto',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-tree',
+
         ],
 
         [
-            'text' => 'change_password',
+            'text' => 'employe',
             'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-users',
+
         ],
         [
             'text' => 'multilevel',

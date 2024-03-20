@@ -7,7 +7,7 @@ return [
     'pages' => 'Pages',
     'producto' => 'PRODUCTO',
     'profile' => 'Profile',
-    'change_password' => 'Change Password',
+    'employe' => 'EMPLEADOS',
     'multilevel' => 'Multi Level',
     'level_one' => 'Level 1',
     'level_two' => 'Level 2',
