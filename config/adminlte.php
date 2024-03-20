@@ -337,7 +337,7 @@ return [
             'text' => 'Productos',
             'url' => 'producto',
             'icon' => 'fas fa-fw fa-tree',
-            
+
 
         ],
         ['header' => 'AÑADIDURAS'],
