@@ -196,9 +196,10 @@
                                             {{-- <button type="submit" class="btn btn-sm btn-danger delete-product">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button> --}}
-                                            <button class="btn btn-danger delete-empleado" data-id="{{ $empleado->id }}" data-names="{{ $empleado->names }}"data-documento="{{ $empleado->documento }}">
+                                            <button class="btn btn-danger delete-empleado" data-id="{{ $empleado->id }}" data-names="{{ $empleado->names }}" data-numdoc="{{ $empleado->numdoc }}">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
+                                            
                                         </div>
                                     </td>
                                 </tr>
