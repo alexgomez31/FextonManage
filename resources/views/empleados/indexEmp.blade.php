@@ -41,7 +41,7 @@
             <thead class="table-primary">
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombres apellidos</th>
+                <th scope="col">Nombres y Apellidos</th>
                 <th scope="col">Documento</th>
                 <th scope="col">N° documento</th>
                 <th scope="col">Cargo</th>

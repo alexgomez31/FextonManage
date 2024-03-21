@@ -64,7 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
     Route::post('/productos', [EmpleadosController::class, 'store'])->name('empleado.store');
 
-    // ver pdfs 
+    // ver pdfs
     // Route::get('/empleados/{id}/showPdf', [EmpleadosController::class, 'showPdfDocumentoSoport'])->name('empleado.showPdf');
     Route::get('/empleados/showPdf/{id}/{tipoSoporte}', [EmpleadosController::class, 'showPdf'])->name('empleado.showPdf');
 
