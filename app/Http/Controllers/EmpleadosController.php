@@ -194,31 +194,34 @@ class EmpleadosController extends Controller
             'direccion' => 'required|string',
             'telefono' => 'required|string',
             'email' => 'required|email',
-            // Agrega reglas de validación para los campos de soporte PDF según tus necesidades
         ]);
 
         // Si se proporciona un nuevo PDF, eliminar el PDF anterior y guardar el nuevo
         $camposSoporte = ['document_soport', 'contrato_soport', 'carta_soport', 'otro_si_soport', 'liquidaciones_soport'];
+
         foreach ($camposSoporte as $campo) {
             if ($request->hasFile($campo)) {
-                // Eliminar el archivo PDF anterior
+                // Eliminar el archivo PDF anterior si existe
                 if ($empleado->$campo) {
-                    Storage::delete('public/' . $empleado->$campo);
+                    Storage::delete('public/pdfs/' . $empleado->$campo);
                 }
-                // Guardar el nuevo archivo PDF
+                // Guardar el nuevo archivo PDF en la ubicación deseada
                 $pdfPath = $request->file($campo)->store('public/pdfs');
-                $empleado->$campo = str_replace('public/', '', $pdfPath);
+
+                // Actualizar el campo correspondiente con la ruta relativa al directorio public
+                $empleado->$campo = 'pdfs/' . basename($pdfPath);
             }
         }
 
-        // Actualizar los demás campos del empleado
-        $empleado->update($request->all());
+        // Actualizar los demás campos del empleado excepto los campos de soporte PDF
+        $empleado->update($request->except($camposSoporte));
 
         // Redireccionar al usuario con un mensaje de éxito
-        // return redirect()->back()->with('success', 'Empleado actualizado correctamente');
         Session::flash('success', 'Empleado actualizado correctamente');
         return redirect()->route('empleados.index');
     }
+
+
 
 
     /**
