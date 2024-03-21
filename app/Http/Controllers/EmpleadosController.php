@@ -11,7 +11,7 @@ class EmpleadosController extends Controller
 {
      /**
      * Muestra una lista paginada de empleados.
-     * 
+     *
      * @return \Illuminate\View\View
      * @author Alexander Gomez <agpan007@gmail.com>
      */
@@ -27,7 +27,7 @@ class EmpleadosController extends Controller
 
      /**
      * Muestra el formulario para crear un nuevo empleado.
-     * 
+     *
      * @return \Illuminate\View\View
      * @author Alexander Gomez <agpan007@gmail.com>
      */
@@ -38,7 +38,7 @@ class EmpleadosController extends Controller
 
     /**
      * Almacena un nuevo empleado en la base de datos.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -121,7 +121,7 @@ class EmpleadosController extends Controller
 
     /**
      * Permite ver los pdf asociados a el empleado.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -162,7 +162,7 @@ class EmpleadosController extends Controller
 
     /**
      * Vista para editar a dicho empleado.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -174,7 +174,7 @@ class EmpleadosController extends Controller
 
     /**
      * funcion especifica para editar y enviar los nuevos campos actualizados de un empleado.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -223,7 +223,7 @@ class EmpleadosController extends Controller
 
     /**
      * Esta funcion permite eliminar empleado y todos sus pdfs asociados.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -240,10 +240,10 @@ class EmpleadosController extends Controller
                 }
             }
         }
-    
+
         // Eliminar el empleado de la base de datos
         $empleado->delete();
-    
+
         // Devolver una respuesta JSON indicando que el empleado se eliminó correctamente
         return response()->json(['success' => 'Empleado eliminado satisfactoriamente']);
     }
