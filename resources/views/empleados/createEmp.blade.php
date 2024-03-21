@@ -26,7 +26,7 @@
                         <form action="{{ route('empleado.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="names">Nombres:</label>
+                                <label for="names">Nombre Completo:</label>
                                 <input type="text" class="form-control" id="names" name="names" required>
                             </div>
                             <div class="form-group">
