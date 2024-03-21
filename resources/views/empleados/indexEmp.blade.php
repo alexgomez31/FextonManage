@@ -43,21 +43,21 @@
                         <thead class="table-primary">
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Nombres y Apellidos</th>
+                            <th scope="col">Nombre Completo</th>
                             <th scope="col">Documento</th>
                             <th scope="col">N° documento</th>
                             <th scope="col">Cargo</th>
-                            <th scope="col">Fecha ing</th>
+                            <th scope="col">Fecha inicio</th>
                             <th scope="col">Fecha fin</th>
                             <th scope="col">Nacionalidad</th>
                             <th scope="col">Ciudad</th>
                             <th scope="col">Direccion</th>
                             <th scope="col">Telefono</th>
                             <th scope="col">Correo</th>
-                            <th scope="col">Documento soport</th>
-                            <th scope="col">Contrato soporte</th>
-                            <th scope="col">Carta soporte</th>
-                            <th scope="col">Otro si soporte</th>
+                            <th scope="col">Documento Identidad</th>
+                            <th scope="col">Contrato Laboral</th>
+                            <th scope="col">Cartas Contrato</th>
+                            <th scope="col">Otro si al Contrato </th>
                             <th scope="col">Liquidaciones</th>
                             <th scope="col">Acciones</th>
                         </tr>
@@ -199,7 +199,7 @@
                                             <button class="btn btn-danger delete-empleado" data-id="{{ $empleado->id }}" data-names="{{ $empleado->names }}" data-numdoc="{{ $empleado->numdoc }}">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
-                                            
+
                                         </div>
                                     </td>
                                 </tr>
@@ -287,18 +287,18 @@
                                         </button>
                                     @endif
                                     <p>Contrato Laboral</p>
-
-                                    <div class="btn-wrapper">
-                                        @if ($empleado->carta_soport)
-                                            <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'carta_soport')">
-                                                <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
-                                            </button>
-                                        @else
-                                            <button class="btn btn-primary disabled">
-                                                <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
-                                            </button>
-                                        @endif
-                                        <p>Cartas de inicio y fin del contrato laboral</p>
+                                </div>
+                                <div class="btn-wrapper">
+                                    @if ($empleado->carta_soport)
+                                        <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'carta_soport')">
+                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        </button>
+                                    @else
+                                        <button class="btn btn-primary disabled">
+                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        </button>
+                                    @endif
+                                    <p>Cartas de inicio y fin de contrato</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->otro_si_soport)
@@ -366,7 +366,4 @@
     </script>
 
 @endsection
-
-
-
 

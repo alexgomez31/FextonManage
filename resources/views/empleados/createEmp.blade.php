@@ -75,23 +75,23 @@
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="document_soport">Documento Soport (PDF):</label>
+                            <label for="document_soport">Documento de Identidad (PDF):</label>
                             <input type="file" class="form-control-file" id="document_soport" name="document_soport">
                         </div>
                         <div class="form-group">
-                            <label for="contrato_soport">Contrato Soport (PDF):</label>
+                            <label for="contrato_soport">Contrato Laboral (PDF):</label>
                             <input type="file" class="form-control-file" id="contrato_soport" name="contrato_soport">
                         </div>
                         <div class="form-group">
-                            <label for="carta_soport">Carta Soport (PDF):</label>
+                            <label for="carta_soport">Cartas de Inicio y Fin de Contrato (PDF):</label>
                             <input type="file" class="form-control-file" id="carta_soport" name="carta_soport">
                         </div>
                         <div class="form-group">
-                            <label for="otro_si_soport">Otro Si Soport (PDF):</label>
+                            <label for="otro_si_soport">Otro Si al Contrato Laboral (PDF):</label>
                             <input type="file" class="form-control-file" id="otro_si_soport" name="otro_si_soport">
                         </div>
                         <div class="form-group">
-                            <label for="liquidaciones_soport">Liquidaciones Soport (PDF):</label>
+                            <label for="liquidaciones_soport">Liquidaciones(PDF):</label>
                             <input type="file" class="form-control-file" id="liquidaciones_soport" name="liquidaciones_soport">
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
