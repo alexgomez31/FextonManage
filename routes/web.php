@@ -74,6 +74,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/empleados/{empleado}/edit', [EmpleadosController::class, 'editt'])->name('empleados.edit');
     Route::put('/empleados/{empleado}', [EmpleadosController::class, 'update'])->name('empleados.update');
 
+    //eliminar productos
+    Route::delete('/empleados/{empleado}', [EmpleadosController::class, 'destroy'])->name('empleados.destroy');
+
 });
 
 require __DIR__.'/auth.php';

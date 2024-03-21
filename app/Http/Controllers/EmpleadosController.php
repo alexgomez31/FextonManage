@@ -182,6 +182,27 @@ class EmpleadosController extends Controller
     }
 
 
+    public function destroy(Empleado $empleado)
+    {
+        // Verificar si el empleado tiene archivos PDF asociados y eliminarlos si existen
+        $camposSoporte = ['document_soport', 'contrato_soport', 'carta_soport', 'otro_si_soport', 'liquidaciones_soport'];
+        foreach ($camposSoporte as $campo) {
+            if (!empty($empleado->$campo)) {
+                $pdfPath = storage_path('app/public/' . $empleado->$campo);
+                if (file_exists($pdfPath)) {
+                    unlink($pdfPath);
+                }
+            }
+        }
+
+        // Eliminar el empleado de la base de datos
+        $empleado->delete();
+
+        // Devolver una respuesta JSON indicando que el empleado se eliminó correctamente
+        return response()->json(['success' => 'Empleado eliminado satisfactoriamente']);
+    }
+
+
 
 
 

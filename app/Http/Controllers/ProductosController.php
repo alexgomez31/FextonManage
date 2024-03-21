@@ -169,22 +169,23 @@ class ProductosController extends Controller
 
     //     return response()->json(['success' => 'Producto eliminado satisfactoriamente']);
     // }
+    
     public function destroy(Producto $producto)
-{
-    // Si el producto tiene un archivo PDF asociado, obtenemos la ruta del archivo y lo eliminamos si existe
-    if (!empty($producto->plano)) {
-        $pdfPath = storage_path('app/public/' . $producto->plano);
-        if (file_exists($pdfPath)) {
-            unlink($pdfPath);
+    {
+        // Si el producto tiene un archivo PDF asociado, obtenemos la ruta del archivo y lo eliminamos si existe
+        if (!empty($producto->plano)) {
+            $pdfPath = storage_path('app/public/' . $producto->plano);
+            if (file_exists($pdfPath)) {
+                unlink($pdfPath);
+            }
         }
+
+        // Eliminar el producto de la base de datos
+        $producto->delete();
+
+        // Devolver una respuesta JSON indicando que el producto se eliminó correctamente
+        return response()->json(['success' => 'Producto eliminado satisfactoriamente']);
     }
-
-    // Eliminar el producto de la base de datos
-    $producto->delete();
-
-    // Devolver una respuesta JSON indicando que el producto se eliminó correctamente
-    return response()->json(['success' => 'Producto eliminado satisfactoriamente']);
-}
 
 
 

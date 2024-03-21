@@ -321,7 +321,7 @@ return [
         [
             'text' => 'MENU',
             'url' => 'dashboard',
-            'icon' => 'fa-solid fa-house',
+            'icon' => 'far fa-fw fa-home',
             'label_color' => 'success',
         ],
         [

@@ -34,7 +34,7 @@
                                     <option value="arbol de navidad" @if($producto->tipoproducto == 'arbol de navidad') selected @endif>Árbol de Navidad</option>
                                     <option value="guirnalda" @if($producto->tipoproducto == 'guirnalda') selected @endif>Guirnalda</option>
                                 </select>
-                            </div>
+                            </div> 
 
                             <div class="form-group">
                                 <label for="referencia">Referencia</label>

@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="card mt-4">
-                    <div class="card-header text-center fs-6"><h2>Actualizar Producto</h2></div>
+                    <div class="card-header text-center fs-6"><h2>Actualizar empleado</h2></div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('empleados.update', ['empleado' => $empleado->id]) }}" enctype="multipart/form-data">
@@ -33,9 +33,19 @@
                             </div>
 
                             <!-- Documento -->
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="documento">Documento</label>
                                 <input id="documento" type="text" class="form-control" name="documento" value="{{ old('documento', $empleado->documento) }}" required>
+                            </div> --}}
+
+                            <div class="form-group">
+                                <label for="documento">Tipo de empleados</label>
+                                <select id="documento" class="form-control" name="documento" required>
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Cedula ciudadania" @if($empleado->documento == 'Cedula ciudadania') selected @endif>Cedula ciudadania</option>
+                                    <option value="Cedula de Extranjeria" @if($empleado->documento == 'Cedula de Extranjeria') selected @endif>Cedula de Extranjeria</option>
+                                    <option value="Sin identificación" @if($empleado->documento == 'Sin identificación') selected @endif>Sin identificación</option>
+                                </select>
                             </div>
 
                             <!-- Número de Documento -->

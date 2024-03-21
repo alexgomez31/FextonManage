@@ -29,9 +29,18 @@
                                 <label for="names">Nombre Completo:</label>
                                 <input type="text" class="form-control" id="names" name="names" required>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="documento">Tipo Documento:</label>
                                 <input type="text" class="form-control" id="documento" name="documento" required>
+                            </div> --}}
+                            <div class="form-group">
+                                <label for="documento">Tipo de Producto</label>
+                                <select id="documento" class="form-control" name="documento" required>
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Cedula ciudadania">Cedula ciudadania</option>
+                                    <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                                    <option value="Sin identificación">Sin identificación</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="numdoc">Número de documento:</label>
