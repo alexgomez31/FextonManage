@@ -8,9 +8,7 @@
 
 
 @section('content')
-<head>
-    <link href="{{ asset('') }}" rel="stylesheet">
-</head>
+
   {{-- <h1>Productos</h1> --}}
   <div class="container">
     <div class="tableproduc">
@@ -33,9 +31,6 @@
             <div class="">
               <a href="{{ route('productos.create') }}" class="btn btn-success">Crear Nuevo Producto</a>
             </div>
-
-          {{-- <input type="text" id="searchInput" class="form-control mt-3" placeholder="Buscar"> --}}
-
           </div>
         </div>
 
@@ -55,142 +50,144 @@
           </thead>
           <tbody class="table-group-divider" id="tableBody">
             @foreach($productos as $producto)
-            <tr>
-              <th scope="row">{{ $producto->id }}</th>
-              {{-- <td>{{ $producto->tipoproducto }}</td> --}}
-              <td>
-                @if(strlen($producto->tipoproducto) > 16)
-                    {{ substr($producto->tipoproducto, 0, 15) }}...
-                @else
-                    {{ $producto->tipoproducto }}
-                @endif
-            </td>
-              <td>
-                @if(strlen($producto->referencia) > 12)
-                    {{ substr($producto->referencia, 0, 12) }}...
-                @else
-                    {{ $producto->referencia }}
-                @endif
-              </td>
-              <td>
-                @if(strlen($producto->descripcion) > 12)
-                    {{ substr($producto->descripcion, 0, 12) }}...
-                @else
-                    {{ $producto->descripcion }}
-                @endif
-              </td>
-
-              <td>
-                @if(strlen($producto->alto) > 12)
-                    {{ substr($producto->alto, 0, 12) }}...
-                @else
-                    {{ $producto->alto }}
-                @endif
-              </td>
-
-              <td>
-                  @if(strlen($producto->ramas) > 12)
-                      {{ substr($producto->ramas, 0, 12) }}...
+              <tr>
+                <th scope="row">{{ $producto->id }}</th>
+                {{-- <td>{{ $producto->tipoproducto }}</td> --}}
+                <td>
+                  @if(strlen($producto->tipoproducto) > 16)
+                      {{ substr($producto->tipoproducto, 0, 15) }}...
                   @else
-                      {{ $producto->ramas }}
+                      {{ $producto->tipoproducto }}
                   @endif
-              </td>
+                </td>
+                <td>
+                  @if(strlen($producto->referencia) > 12)
+                      {{ substr($producto->referencia, 0, 12) }}...
+                  @else
+                      {{ $producto->referencia }}
+                  @endif
+                </td>
+                <td>
+                  @if(strlen($producto->descripcion) > 12)
+                      {{ substr($producto->descripcion, 0, 12) }}...
+                  @else
+                      {{ $producto->descripcion }}
+                  @endif
+                </td>
 
-              <td>
-                @if(strlen($producto->materiales) > 12)
-                    {{ substr($producto->materiales, 0, 12) }}...
-                @else
-                    {{ $producto->materiales }}
-                @endif
-            </td>
+                <td>
+                  @if(strlen($producto->alto) > 12)
+                      {{ substr($producto->alto, 0, 12) }}...
+                  @else
+                      {{ $producto->alto }}
+                  @endif
+                </td>
+                <td>
+                    @if(strlen($producto->ramas) > 12)
+                        {{ substr($producto->ramas, 0, 12) }}...
+                    @else
+                        {{ $producto->ramas }}
+                    @endif
+                </td>
+                <td>
+                  @if(strlen($producto->materiales) > 12)
+                      {{ substr($producto->materiales, 0, 12) }}...
+                  @else
+                      {{ $producto->materiales }}
+                  @endif
+                </td>
 
-              <td>
-                @if($producto->plano)
-                    <span class="badge bg-success">PDF asociado</span>
-                @else
-                    <span class="badge bg-danger">Falta PDF</span>
-                @endif
-              </td>
-              <td>
-
-                @if($producto->plano)
-                    <a href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
-                        <i class="fas fa-eye"></i> Ver PDF
-                    </a>
-                @else
-                    <button class="btn btn-sm btn-warning show-pdf-alert" data-producto-id="{{ $producto->id }}">
-                        <i class="fas fa-exclamation-triangle"></i> No hay PDF
-                    </button>
-                @endif
-
-                <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
+                <td>
+                  @if($producto->plano)
+                      <span class="badge bg-success">PDF asociado</span>
+                  @else
+                      <span class="badge bg-danger">Falta PDF</span>
+                  @endif
+                </td>
+                <td>
+                  @if($producto->plano)
+                      <a href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
+                          <i class="fas fa-eye"></i> Ver PDF
+                      </a>
+                  @else
+                      <button class="btn btn-sm btn-warning show-pdf-alert" data-producto-id="{{ $producto->id }}">
+                          <i class="fas fa-exclamation-triangle"></i> No hay PDF
+                      </button>
+                  @endif
+                  <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
+                      <i class="fas fa-edit"></i>
+                  </a>
+                  <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">
+                      <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
             @endforeach
           </tbody>
-          <div id="pdfContainer" style="display: none;">
-            <embed id="pdfEmbed" src="#" type="application/pdf" width="100%" height="600px">
-          </div>
-
         </table>
 
         <div class="d-flex justify-content-center">
-
           <!-- Personalizar la paginación -->
           <ul class="pagination">
             <!-- Enlace a la página anterior -->
             <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
-                <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
+              <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
             </li>
 
             <!-- Mostrar los números de página -->
             @for ($i = 1; $i <= $totalPages; $i++)
-            <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
+              <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
                 <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
-            </li>
+              </li>
             @endfor
 
-      <!-- Enlace a la página siguiente -->
+            <!-- Enlace a la página siguiente -->
             <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
-                <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
+              <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
             </li>
           </ul>
         </div>
-</div>
-</div>
+      </div>
+    </div>
 
 
-<script>
-  $(document).ready(function() {
-      $('.show-pdf-alert').click(function() {
-          var productoId = $(this).data('producto-id');
-          Swal.fire({
-              title: 'Alerta',
-              text: 'No hay plano cargado para este producto.',
-              icon: 'warning',
-              confirmButtonText: 'OK'
+    {{-- <script>
+      $(document).ready(function() {
+          $('.show-pdf-alert').click(function() {
+              var productoId = $(this).data('producto-id');
+              Swal.fire({
+                  title: 'Alerta',
+                  text: 'No hay plano cargado para este producto.',
+                  icon: 'warning',
+                  confirmButtonText: 'OK'
+              });
           });
       });
-  });
-</script>
+    </script> --}}
 
-{{-- mostar alerta de actualizacion --}}
-<script>
-  const successMessage = '{{ Session::get('success') }}';
-  if (successMessage) {
-      setTimeout(function() {
-          Swal.fire({
-              title: 'Éxito',
-              text: successMessage,
-              icon: 'success'
+    <script>
+      $(document).ready(function() {
+          $('.show-pdf-alert').click(function() {
+              var productoId = $(this).data('producto-id');
+              Swal.fire({
+                  title: 'Alerta',
+                  text: 'No hay plano cargado para este producto.',
+                  icon: 'warning',
+                  confirmButtonText: 'OK'
+              });
           });
-      }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
-  }
-</script>
-</div>
+      });
+
+      const successMessage = '{{ Session::get('success') }}';
+      if (successMessage) {
+          setTimeout(function() {
+              Swal.fire({
+                  title: 'Éxito',
+                  text: successMessage,
+                  icon: 'success'
+              });
+          }, 1000); 
+      }
+    </script>
+  </div>
 @endsection
