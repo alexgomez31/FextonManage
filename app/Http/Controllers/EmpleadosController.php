@@ -194,120 +194,13 @@ class EmpleadosController extends Controller
                 }
             }
         }
-
+    
         // Eliminar el empleado de la base de datos
         $empleado->delete();
-
+    
         // Devolver una respuesta JSON indicando que el empleado se eliminó correctamente
         return response()->json(['success' => 'Empleado eliminado satisfactoriamente']);
     }
 
 
-
-
-
-
-    // ver un pdf mediante un modal 
-    // public function showPdfDocumentoSoport($id)
-    // {
-    //     $empleado = Empleado::find($id);
-
-    //     // Verificar si el empleado existe y si hay un archivo de soporte asociado
-    //     if (!$empleado || !$empleado->document_soport) {
-    //         return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
-    //     }
-
-    //     // Obtener la ruta del archivo PDF
-    //     $pdfPath = storage_path('app/public/' . $empleado->document_soport);
-
-    //     // Verificar si el archivo PDF existe
-    //     if (!file_exists($pdfPath)) {
-    //         return redirect()->back()->with('error', 'El archivo PDF no existe.');
-    //     }
-
-    //     // Devolver el archivo PDF al usuario
-    //     return response()->file($pdfPath);
-    // }
-
-    // public function showPdfContratoSoport($id)
-    // {
-    //     $empleado = Empleado::find($id);
-
-    //     // Verificar si el empleado existe y si hay un archivo de soporte asociado
-    //     if (!$empleado || !$empleado->contrato_soport) {
-    //         return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
-    //     }
-
-    //     // Obtener la ruta del archivo PDF
-    //     $pdfPath = storage_path('app/public/' . $empleado->contrato_soport);
-
-    //     // Verificar si el archivo PDF existe
-    //     if (!file_exists($pdfPath)) {
-    //         return redirect()->back()->with('error', 'El archivo PDF no existe.');
-    //     }
-
-    //     // Devolver el archivo PDF al usuario
-    //     return response()->file($pdfPath);
-    // }
-
-    // public function showPdfCartaSoport($id)
-    // {
-    //     $empleado = Empleado::find($id);
-
-    //     // Verificar si el empleado existe y si hay un archivo de soporte asociado
-    //     if (!$empleado || !$empleado->carta_soport) {
-    //         return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
-    //     }
-
-    //     // Obtener la ruta del archivo PDF
-    //     $pdfPath = storage_path('app/public/' . $empleado->carta_soport);
-
-    //     // Verificar si el archivo PDF existe
-    //     if (!file_exists($pdfPath)) {
-    //         return redirect()->back()->with('error', 'El archivo PDF no existe.');
-    //     }
-
-    //     // Devolver el archivo PDF al usuario
-    //     return response()->file($pdfPath);
-    // }
-    // public function showPdfOtroSiSoport($id)
-    // {
-    //     $empleado = Empleado::find($id);
-
-    //     // Verificar si el empleado existe y si hay un archivo de soporte asociado
-    //     if (!$empleado || !$empleado->otro_si_soport) {
-    //         return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
-    //     }
-
-    //     // Obtener la ruta del archivo PDF
-    //     $pdfPath = storage_path('app/public/' . $empleado->otro_si_soport);
-
-    //     // Verificar si el archivo PDF existe
-    //     if (!file_exists($pdfPath)) {
-    //         return redirect()->back()->with('error', 'El archivo PDF no existe.');
-    //     }
-
-    //     // Devolver el archivo PDF al usuario
-    //     return response()->file($pdfPath);
-    // }
-
-    // public function showPdfLiquidacion($id)
-    // {
-    //     $empleado = Empleado::find($id);
-
-    //     // Verificar si el empleado existe y si hay un archivo de soporte asociado
-    //     if (!$empleado || !$empleado->liquidaciones_soport) {
-    //         return redirect()->back()->with('error', 'Este empleado no tiene ningún archivo de soporte PDF.');
-    //     }
-
-    //     // Obtener la ruta del archivo PDF
-    //     $pdfPath = storage_path('app/public/' . $empleado->liquidaciones_soport);
-
-    //     // Verificar si el archivo PDF existe
-    //     if (!file_exists($pdfPath)) {
-    //         return redirect()->back()->with('error', 'El archivo PDF no existe.');
-    //     }
-    //     // Devolver el archivo PDF al usuario
-    //     return response()->file($pdfPath);
-    // }
 }
