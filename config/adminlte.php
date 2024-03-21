@@ -340,7 +340,7 @@ return [
 
 
         ],
-        ['header' => 'AÑADIDURAS'],
+        ['header' => 'EMPLEADOS'],
         [
             'text' => 'employe',
             'url' => 'empleados',

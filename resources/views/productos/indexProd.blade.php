@@ -14,7 +14,7 @@
   {{-- <h1>Productos</h1> --}}
   <div class="container">
     <div class="tableproduc">
-      <h1 class="text-center text-primary mt-4">Lista de productos</h1>
+        <h1 class="text-center custom-green mt-4">Lista de productos</h1>
       <div class="tablelist">
         {{-- <button type="submit" href="{{ route('productos.create') }}" class="btn btn-success mb-3">Nuevo</button> --}}
         <div class="container text-center">

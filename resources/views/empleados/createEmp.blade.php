@@ -36,7 +36,7 @@
                                 <input type="text" class="form-control" id="documento" name="documento" required>
                             </div> --}}
                             <div class="form-group">
-                                <label for="documento">Tipo de Producto</label>
+                                <label for="documento">Tipo de Documento</label>
                                 <select id="documento" class="form-control" name="documento" required>
                                     <option value="">Seleccione una opción</option>
                                     <option value="Cedula ciudadania">Cedula ciudadania</option>
