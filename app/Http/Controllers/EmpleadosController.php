@@ -201,21 +201,24 @@ class EmpleadosController extends Controller
 
         foreach ($camposSoporte as $campo) {
             if ($request->hasFile($campo)) {
-                // Eliminar el archivo PDF anterior si existe
+                // Verificar si hay un archivo existente y eliminarlo
                 if ($empleado->$campo) {
-                    Storage::delete('public/pdfs/' . $empleado->$campo);
+                    $rutaArchivoAnterior = 'public/' . $empleado->$campo;
+                    if (Storage::exists($rutaArchivoAnterior)) {
+                        Storage::delete($rutaArchivoAnterior);
+                    }
                 }
                 // Guardar el nuevo archivo PDF en la ubicación deseada
                 $pdfPath = $request->file($campo)->store('public/pdfs');
-
+    
                 // Actualizar el campo correspondiente con la ruta relativa al directorio public
                 $empleado->$campo = 'pdfs/' . basename($pdfPath);
             }
         }
-
+    
         // Actualizar los demás campos del empleado excepto los campos de soporte PDF
         $empleado->update($request->except($camposSoporte));
-
+    
         // Redireccionar al usuario con un mensaje de éxito
         Session::flash('success', 'Empleado actualizado correctamente');
         return redirect()->route('empleados.index');
