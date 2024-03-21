@@ -1,0 +1,27 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input[type='file'] {
+    margin-top: 5px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container h2 {
+    margin-top: 0;
+}
+*{
+
+}

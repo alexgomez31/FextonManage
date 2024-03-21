@@ -3,6 +3,8 @@
 @section('title', 'crear producto')
 @section('content_header')
 
+<link rel="stylesheet" href="{{ asset('css/createEmp.css') }}">
+
     {{-- <p>Administracion de articulos</p> --}}
 
 @if (session('status'))
