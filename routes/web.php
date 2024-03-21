@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
 
     // crear productos
     Route::get('/productos/create', [ProductosController::class, 'create'])->name('productos.create');
-    Route::post('/productos', [ProductosController::class, 'store'])->name('productos.store');
+    Route::post('/productos/cr', [ProductosController::class, 'store'])->name('productos.store');
 
     // buscar productos
     Route::get('/productos/search', [ProductosController::class, 'search'])->name('productos.search');
