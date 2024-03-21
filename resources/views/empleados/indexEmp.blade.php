@@ -36,7 +36,7 @@
                         {{-- <input type="text" id="searchInput" class="form-control mt-3" placeholder="Buscar"> --}}
 
                     </div>
-                </div>    
+                </div>
 
                 <div class="table-responsive"> <!-- Agregar la clase table-responsive -->
                     <table id="empleados" class="table table-striped table-bordered mt-4">
@@ -215,25 +215,25 @@
                           <li class="page-item {{ ($empleados->currentPage() == 1) ? 'disabled' : '' }}">
                               <a class="page-link" href="{{ $empleados->previousPageUrl() }}">« Atras</a>
                           </li>
-              
+
                           <!-- Mostrar los números de página -->
                           @for ($i = 1; $i <= $totalPages; $i++)
                           <li class="page-item {{ ($empleados->currentPage() == $i) ? 'active' : '' }}">
                               <a class="page-link" href="{{ $empleados->url($i) }}">{{ $i }}</a>
                           </li>
                           @endfor
-              
+
                             <!-- Enlace a la página siguiente -->
                           <li class="page-item {{ ($empleados->currentPage() == $totalPages) ? 'disabled' : '' }}">
                               <a class="page-link" href="{{ $empleados->nextPageUrl() }}">Siguiente»</a>
                           </li>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
-            </div> 
-        </div> 
+            </div>
+        </div>
     </div>
-               
+
     {{-- modal --}}
     @foreach ($empleados as $empleado)
         <!-- Modal para ver detalles del empleado -->
@@ -286,6 +286,18 @@
                                         </button>
                                     @endif
                                     <p>Contrato Laboral</p>
+
+                                    <div class="btn-wrapper">
+                                        @if ($empleado->carta_soport)
+                                            <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'carta_soport')">
+                                                <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                            </button>
+                                        @else
+                                            <button class="btn btn-primary disabled">
+                                                <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                            </button>
+                                        @endif
+                                        <p>Cartas de inicio y fin del contrato laboral</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->otro_si_soport)
@@ -351,7 +363,7 @@
             }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
         }
     </script>
-  
+
 @endsection
 
 
