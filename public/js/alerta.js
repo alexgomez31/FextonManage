@@ -52,12 +52,11 @@ $(document).ready(function() {
     $('.delete-empleado').click(function() {
         var id = $(this).data('id');
         var names = $(this).data('names');
-        var documento = $(this).data('documento');
-        // Agrega más variables según sea necesario
+        var numdoc = $(this).data('numdoc'); // Cambiado a 'numdoc' en lugar de 'documento'
 
         Swal.fire({
             title: "¿Estás seguro?",
-            html: "Estás a punto de eliminar al empleado: <strong>" + names + "</strong>, documento: <strong>" + documento + "</strong>.<br>¡No podrás revertir esto!",
+            html: "Estás a punto de eliminar al empleado de nombre: <strong>" + names + "</strong>, Número de Documento: <strong>" + numdoc + "</strong>.<br>¡No podrás revertir esto!", // Cambiado 'documento' a 'numdoc'
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
