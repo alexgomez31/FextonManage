@@ -126,12 +126,9 @@
                 <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
                     <i class="fas fa-edit"></i>
                 </a>
-
                 <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">
                     <i class="fas fa-trash-alt"></i>
                 </button>
-
-
               </td>
             </tr>
             @endforeach
@@ -146,24 +143,24 @@
 
           <!-- Personalizar la paginación -->
           <ul class="pagination">
-              <!-- Enlace a la página anterior -->
-              <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
-                  <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
-              </li>
+            <!-- Enlace a la página anterior -->
+            <li class="page-item {{ ($productos->currentPage() == 1) ? 'disabled' : '' }}">
+                <a class="page-link" href="{{ $productos->previousPageUrl() }}">« Atras</a>
+            </li>
 
-              <!-- Mostrar los números de página -->
-              @for ($i = 1; $i <= $totalPages; $i++)
-              <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
+            <!-- Mostrar los números de página -->
+            @for ($i = 1; $i <= $totalPages; $i++)
+            <li class="page-item {{ ($productos->currentPage() == $i) ? 'active' : '' }}">
                 <a class="page-link" href="{{ $productos->url($i) }}">{{ $i }}</a>
             </li>
-        @endfor
+            @endfor
 
-        <!-- Enlace a la página siguiente -->
-        <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
-            <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
-        </li>
-    </ul>
-</div>
+      <!-- Enlace a la página siguiente -->
+            <li class="page-item {{ ($productos->currentPage() == $totalPages) ? 'disabled' : '' }}">
+                <a class="page-link" href="{{ $productos->nextPageUrl() }}">Siguiente»</a>
+            </li>
+          </ul>
+        </div>
 </div>
 </div>
 

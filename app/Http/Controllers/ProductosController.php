@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
 
 class ProductosController extends Controller
 {
-    //
+    /**
+     * Muestra una lista paginada de productos.
+     * 
+     * @return \Illuminate\View\View
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function index()
     {
         $productos = Producto::simplePaginate(15);
@@ -35,13 +39,25 @@ class ProductosController extends Controller
         return response()->json($productos);
     }
 
-
+    /**
+     * Muestra el formulario para crear un nuevo producto.
+     * 
+     * @return \Illuminate\View\View
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function create()
     {
         return view('productos.createProd');
     }
 
 
+    /**
+     * Almacena un nuevo producto en la base de datos.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function store(Request $request)
     {
         // Validar los datos del formulario
@@ -84,21 +100,13 @@ class ProductosController extends Controller
         return redirect()->route('product.index');
     }
 
-    // public function showPdf($id)
-    // {
-    //     $producto = Producto::find($id);
-    //     if (!$producto || !$producto->plano) {
-    //         // abort(404);
-    //         // dd('asdasdas');
-    //         // Alert::success('xD','404');
-    //         // return redirect('/producto');
-    //         return response()->json(['error' => 'Este producto no contiene ningún archivo de soporte.']);
-
-    //     }
-    //     $pdfUrl = storage_path('app/public/' . $producto->plano);
-    //     return response()->file($pdfUrl);
-    // }
-    
+     /**
+     * Permite observar el pdf asociado a producto.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function showPdf($id)
     {
         $producto = Producto::find($id);
@@ -116,13 +124,25 @@ class ProductosController extends Controller
         return response()->file($pdfPath);
     }
 
-
-
+    /**
+     * Vista para editar a dicho producto.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function edit(Producto $producto)
     {
         return view('productos.editProd', compact('producto'));
     }
 
+    /**
+     * funcion especifica para editar y enviar los nuevos campos actualizados de producto.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function update(Request $request, Producto $producto)
     {
         // Validar los datos del formulario
@@ -152,24 +172,13 @@ class ProductosController extends Controller
         return redirect()->route('product.index');
     }
 
-
-
-    // public function destroy(Producto $producto)
-    // {
-    //     // Obtener la ruta del archivo PDF asociado al producto
-    //     $pdfPath = storage_path('app/public/' . $producto->plano);
-
-    //     // Eliminar el producto
-    //     $producto->delete();
-
-    //     // Si la ruta del archivo PDF existe, eliminarlo del sistema de archivos
-    //     if (file_exists($pdfPath)) {
-    //         unlink($pdfPath);
-    //     }
-
-    //     return response()->json(['success' => 'Producto eliminado satisfactoriamente']);
-    // }
-    
+     /**
+     * Esta funcion permite eliminar un producto y su pdf asociado.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function destroy(Producto $producto)
     {
         // Si el producto tiene un archivo PDF asociado, obtenemos la ruta del archivo y lo eliminamos si existe

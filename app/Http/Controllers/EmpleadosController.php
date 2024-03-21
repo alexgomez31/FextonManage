@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class EmpleadosController extends Controller
 {
+     /**
+     * Muestra una lista paginada de empleados.
+     * 
+     * @return \Illuminate\View\View
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function index()
     {
 
@@ -19,11 +25,24 @@ class EmpleadosController extends Controller
         return view('empleados.indexEmp', compact('empleados', 'totalPages'));
     }
 
+     /**
+     * Muestra el formulario para crear un nuevo empleado.
+     * 
+     * @return \Illuminate\View\View
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function create()
     {
         return view('empleados.createEmp');
     }
 
+    /**
+     * Almacena un nuevo empleado en la base de datos.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function store(Request $request)
     {
         // Validar los datos del formulario
@@ -100,7 +119,13 @@ class EmpleadosController extends Controller
         return redirect()->route('empleados.index');
     }
 
-
+    /**
+     * Permite ver los pdf asociados a el empleado.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function showPdf($id, $tipoSoporte)
     {
         $empleado = Empleado::find($id);
@@ -135,11 +160,25 @@ class EmpleadosController extends Controller
         return response()->file($pdfPath);
     }
 
+    /**
+     * Vista para editar a dicho empleado.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function editt(Empleado $empleado)
     {
         return view('empleados.editEmp', compact('empleado'));
     }
 
+    /**
+     * funcion especifica para editar y enviar los nuevos campos actualizados de un empleado.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function update(Request $request, Empleado $empleado)
     {
         // Validar los datos del formulario
@@ -182,6 +221,13 @@ class EmpleadosController extends Controller
     }
 
 
+    /**
+     * Esta funcion permite eliminar empleado y todos sus pdfs asociados.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @author Alexander Gomez <agpan007@gmail.com>
+     */
     public function destroy(Empleado $empleado)
     {
         // Verificar si el empleado tiene archivos PDF asociados y eliminarlos si existen
