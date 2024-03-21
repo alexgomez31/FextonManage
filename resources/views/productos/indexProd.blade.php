@@ -8,7 +8,9 @@
 
 
 @section('content')
-
+<head>
+    <link href="{{ asset('') }}" rel="stylesheet">
+</head>
   {{-- <h1>Productos</h1> --}}
   <div class="container">
     <div class="tableproduc">

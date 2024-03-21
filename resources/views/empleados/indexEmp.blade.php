@@ -4,6 +4,9 @@
 @section('plugins.SweetAlert2', true)
 @section('content_header')
 
+
+
+<link rel="stylesheet" href="{{ asset('css/indexEmp.css') }}">
     {{-- <p>Administracion de articulos</p> --}}
 
 
@@ -185,23 +188,22 @@
                 {{-- <a id="mostrarPdf" href="#" target="_blank" class="btn btn-sm btn-primary">
                     <i class="fas fa-eye"></i>
                 </a> --}}
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verEmpleadoModal{{ $empleado->id }}">
-
-
 
                 {{-- <a href="#" class="open-pdf" data-id="{{ $empleado->id }}">Abrir PDF</a> --}}
 
-                <a href="#" class="btn btn-sm btn-warning">
-                    <i class="fas fa-edit"></i>
-                </a>
+                <div class="button-container">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verEmpleadoModal{{ $empleado->id }}">
+                        <i class="fas fa-eye"></i>
+                    </button>
 
-                <td>
-                    <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn btn-primary">Editar</a>
-                </td>
-                <button type="submit" class="btn btn-sm btn-danger delete-product" >
-                    <i class="fas fa-trash-alt"></i>
-                </button>
+                    <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i>
+                    </a>
 
+                    <button type="submit" class="btn btn-sm btn-danger delete-product">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
 
               </td>
             </tr>
@@ -250,51 +252,70 @@
             <div class="modal-body">
                 <p><strong>Documento:</strong> {{ $empleado->documento }}</p>
                 <p><strong>Número de Documento:</strong> {{ $empleado->numdoc }}</p>
+                <p><strong>Telefono</strong> {{ $empleado->telefono }}</p>
+                <p><strong>Email:</strong> {{ $empleado->email }}</p>
+                <p><strong>Dirección:</strong> {{ $empleado->direccion }}</p>
+                <p><strong>Nacionalidad:</strong> {{ $empleado->nacionalidad }}</p>
+                <p><strong>Cargo:</strong> {{ $empleado->cargo }}</p>
                 <!-- Agrega más detalles según tus necesidades -->
 
                 <!-- Botones para ver los PDF asociados -->
                 <div class="modal-body">
-                    <p><strong>Documento:</strong> {{ $empleado->documento }}</p>
+                    {{-- <p><strong>Documento:</strong> {{ $empleado->documento }}</p> --}}
                     <!-- Agrega más detalles según tus necesidades -->
 
                     <!-- Listar todos los tipos de soporte disponibles -->
-                    <div>
-                        <p><strong>Document Soport:</strong>
+                    <div class="btn-container">
+                        <div class="btn-wrapper">
                             @if ($empleado->document_soport)
-                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'document_soport')">Ver PDF</button>
+                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'document_soport')">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @else
-                                Soporte no asociado
+                                <button class="btn btn-primary disabled">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @endif
-                        </p>
-                    </div>
-                    <div>
-                        <p><strong>Contrato Soport:</strong>
+                            <p>Documento De Identidad</p>
+                        </div>
+                        <div class="btn-wrapper">
                             @if ($empleado->contrato_soport)
-                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'contrato_soport')">Ver PDF</button>
+                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'contrato_soport')">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @else
-                                Soporte no asociado
+                                <button class="btn btn-primary disabled">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @endif
-                        </p>
-                    </div>
-                    <div>
-                        <p><strong>Otro Si Soport:</strong>
+                            <p>Contrato Laboral</p>
+                        </div>
+                        <div class="btn-wrapper">
                             @if ($empleado->otro_si_soport)
-                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'otro_si_soport')">Ver PDF</button>
+                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'otro_si_soport')">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @else
-                                Soporte no asociado
+                                <button class="btn btn-primary disabled">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @endif
-                        </p>
-                    </div>
-                    <div>
-                        <p><strong>Liquidaciones Soport:</strong>
+                            <p>Otro Si al contrato Laboral</p>
+                        </div>
+                        <div class="btn-wrapper">
                             @if ($empleado->liquidaciones_soport)
-                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'liquidaciones_soport')">Ver PDF</button>
+                                <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'liquidaciones_soport')">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @else
-                                Soporte no asociado
+                                <button class="btn btn-primary disabled">
+                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                </button>
                             @endif
-                        </p>
+                            <p>Liquidaciones</p>
+                        </div>
                     </div>
-                </div>
+
 
             </div>
             <div class="modal-footer">
