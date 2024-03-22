@@ -21,3 +21,8 @@
    background-color: rgb(228, 240, 229);
 }
 
+.table-responsive
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
