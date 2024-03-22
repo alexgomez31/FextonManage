@@ -14,14 +14,15 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/bienvenido.css">
+    
+    <link rel="stylesheet" href="{{ asset('css/bienvenido.css') }}">
 </head>
 <body class="antialiased bg-gray-100 dark:bg-gray-900 selection:bg-red-500 selection:text-white">
     <div class="relative flex justify-center items-center min-h-screen">
         <div class="max-w-3xl w-full p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg">
             <div class="text-center mb-6">
                 <h1 class="text-3xl font-semibold text-gray-900 dark:text-gray-200">BIENVENIDO</h1>
-            
+
             </div>
 
             <div class="text-gray-700 dark:text-gray-300 mb-6">
