@@ -27,14 +27,11 @@
                                 ></path>
                                 </g>
                             </svg>
-                            <input class="inputt" type="search" id="searchInput" placeholder="Buscar" />
+                            <input class="inputt" type="search" id="searchInputEmp" placeholder="Buscar" />
                         </div>
                         <div class="">
                             <a href="{{route('empleados.create')}}" class="btn btn-success">Registrar Empleado</a>
                         </div>
-
-                        {{-- <input type="text" id="searchInput" class="form-control mt-3" placeholder="Buscar"> --}}
-
                     </div>
                 </div>
 
