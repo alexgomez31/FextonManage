@@ -13,7 +13,7 @@
 @endif
 
 
-    <link href="{{ asset('css/createEmp.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/editEmp.css') }}" rel="stylesheet">
 
 
 @section('content')
@@ -25,6 +25,7 @@
                     <div class="card-header text-center fs-6"><h2>Actualizar empleado</h2></div>
 
                     <div class="card-body">
+
                         <form method="POST" action="{{ route('empleados.update', ['empleado' => $empleado->id]) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -149,13 +150,17 @@
                                 <input id="liquidaciones_soport" type="file" class="form-control-file" name="liquidaciones_soport">
                             </div>
 
+                                <button type="submit" class="btn btn-success">Actualizar</button>
+                        </form>
 
-                                                        <button type="submit" class="btn btn-primary">Actualizar</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
 
-                            @stop
+            </div>
+
+        </div>
+
+    </div>
+
+ @stop
+

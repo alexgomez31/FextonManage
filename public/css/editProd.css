@@ -1,0 +1,7 @@
+.card-body {
+    overflow-y: auto;
+    max-height: 80vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    background-color: rgb(228, 240, 229);
+}

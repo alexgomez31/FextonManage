@@ -22,7 +22,7 @@
                     <h1>Registrar Empleado</h1>
                 </div>
 
-                <div class="card-body" style="overflow-y: auto; max-height: 80vh;">
+                <div class="card-body">
                     <form action="{{ route('empleado.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -94,7 +94,7 @@
                             <label for="liquidaciones_soport">Liquidaciones(PDF):</label>
                             <input type="file" class="form-control-file" id="liquidaciones_soport" name="liquidaciones_soport">
                         </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
                     </form>
                 </div>
             </div>

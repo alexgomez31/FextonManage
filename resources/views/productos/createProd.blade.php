@@ -14,7 +14,7 @@
 
 @section('content')
 
-    {{-- <h1>Crear producto</h1> --}}
+<link href="{{ asset('css/createProd.css') }}" rel="stylesheet">
 
     <div class="container">
         <div class="row">
@@ -67,7 +67,7 @@
 
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Crear Producto</button>
+                            <button type="submit" class="btn btn-success">Crear Producto</button>
                         </form>
 
 

@@ -154,7 +154,7 @@ class ProductosController extends Controller
             'ramas' => 'required|string',
             'materiales'=> 'required|string',
 
-            'plano' => 'nullable|file|mimes:pdf|max:2048',
+            'plano' => 'nullable|file|mimes:pdf|max:30720',
         ]);
 
         // Si se proporciona un nuevo PDF, eliminar el PDF anterior

@@ -99,7 +99,7 @@
 
                 <td>
                   @if($producto->plano)
-                      <span class="badge bg-success">PDF asociado</span>
+                  <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
                   @else
                       <span class="badge bg-danger">Falta PDF</span>
                   @endif

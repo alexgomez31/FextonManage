@@ -12,6 +12,7 @@
     </div>
 @endif
 
+<link href="{{ asset('css/EditEmp.css') }}" rel="stylesheet">
 
 @section('content')
 
@@ -34,7 +35,7 @@
                                     <option value="arbol de navidad" @if($producto->tipoproducto == 'arbol de navidad') selected @endif>Árbol de Navidad</option>
                                     <option value="guirnalda" @if($producto->tipoproducto == 'guirnalda') selected @endif>Guirnalda</option>
                                 </select>
-                            </div> 
+                            </div>
 
                             <div class="form-group">
                                 <label for="referencia">Referencia</label>
@@ -61,7 +62,7 @@
                                 <input id="plano" type="file" class="form-control-file" name="plano" accept=".pdf">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Actualizar Producto</button>
+                            <button type="submit" class="btn btn-success">Actualizar Producto</button>
                         </form>
                     </div>
                 </div>

@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="table-responsive"> <!-- Agregar la clase table-responsive -->
                     <table id="empleados" class="table table-striped table-bordered mt-4">
@@ -147,37 +147,43 @@
 
                                     <td>
                                         @if($empleado->document_soport)
-                                            <span class="badge bg-success">PDF asociado</span>
+                                        <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
+
                                         @else
-                                            <span class="badge bg-danger">Falta PDF</span>
+                                        <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> Falta PDF</span>
+
                                         @endif
                                     </td>
                                     <td>
                                         @if($empleado->contrato_soport)
-                                            <span class="badge bg-success">PDF asociado</span>
+                                        <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
                                         @else
-                                            <span class="badge bg-danger">Falta PDF</span>
+                                        <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> Falta PDF</span>
+
                                         @endif
                                     </td>
                                     <td>
                                         @if($empleado->carta_soport)
-                                            <span class="badge bg-success">PDF asociado</span>
+                                        <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
                                         @else
-                                            <span class="badge bg-danger">Falta PDF</span>
+                                        <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> Falta PDF</span>
+
                                         @endif
                                     </td>
                                     <td>
                                         @if($empleado->otro_si_soport)
-                                            <span class="badge bg-success">PDF asociado</span>
+                                        <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
                                         @else
-                                            <span class="badge bg-danger">Falta PDF</span>
+                                        <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> Falta PDF</span>
+
                                         @endif
                                     </td>
                                     <td>
                                         @if($empleado->liquidaciones_soport)
-                                            <span class="badge bg-success">PDF asociado</span>
+                                        <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
                                         @else
-                                            <span class="badge bg-danger">Falta PDF</span>
+                                        <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> Falta PDF</span>
+
                                         @endif
                                     </td>
 
@@ -366,6 +372,9 @@
             }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
         }
     </script>
+
+
+
 
 @endsection
 
