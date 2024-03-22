@@ -34,6 +34,7 @@
                         </div>
                     </div>
                 </div>
+                
 
                 <div class="table-responsive"> <!-- Agregar la clase table-responsive -->
                     <table id="empleados" class="table table-striped table-bordered mt-4">
@@ -245,7 +246,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Id</strong> {{ $empleado->id }}</p>
+                        <p><strong>Id:</strong> {{ $empleado->id }}</p>
                         <p><strong>Documento:</strong> {{ $empleado->documento }}</p>
                         <p><strong>Número de Documento:</strong> {{ $empleado->numdoc }}</p>
                         <p><strong>Telefono</strong> {{ $empleado->telefono }}</p>
@@ -256,21 +257,6 @@
                         <p><strong>Fecha Inicio:</strong> {{ $empleado->fecha_ingreso }}</p>
                         <p><strong>Fecha Fin:</strong> {{ $empleado->fecha_fin }}</p>
                         <p><strong>Ciudad:</strong> {{ $empleado->ciudad }}</p>
-
-
-
-
-{{--
-
-
-
-
-
-                        <th scope="col">Nacionalidad</th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Direccion</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Correo</th> --}}
 
 
                         <!-- Botones para ver los PDF asociados -->
@@ -314,7 +300,7 @@
                                             <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
-                                    <p>Cartas de inicio y fin de contrato</p>
+                                    <p>Cartas de Inicio y Fin de Contrato</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->otro_si_soport)
@@ -343,7 +329,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\userController;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,10 @@ Route::middleware('auth')->group(function () {
 
     // buscar empleados
     Route::get('/empleados/searchEm', [EmpleadosController::class, 'searchEmple'])->name('empleados.search');
+    
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 });
 
