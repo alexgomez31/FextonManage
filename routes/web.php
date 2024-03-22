@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
     // buscar productos
     Route::get('/productos/search', [ProductosController::class, 'search'])->name('productos.search');
 
+
     // editar productos
     Route::get('/productos/{producto}/edit', [ProductosController::class, 'edit'])->name('productos.edit');
     Route::put('/productos/{producto}', [ProductosController::class, 'update'])->name('productos.update');
@@ -65,17 +66,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/productos', [EmpleadosController::class, 'store'])->name('empleado.store');
 
     // ver pdfs
-    // Route::get('/empleados/{id}/showPdf', [EmpleadosController::class, 'showPdfDocumentoSoport'])->name('empleado.showPdf');
     Route::get('/empleados/showPdf/{id}/{tipoSoporte}', [EmpleadosController::class, 'showPdf'])->name('empleado.showPdf');
 
 
-    // editar productos
-
+    // editar empleados
     Route::get('/empleados/{empleado}/edit', [EmpleadosController::class, 'editt'])->name('empleados.edit');
     Route::put('/empleados/{empleado}', [EmpleadosController::class, 'update'])->name('empleados.update');
 
-    //eliminar productos
+    //eliminar empleados
     Route::delete('/empleados/{empleado}', [EmpleadosController::class, 'destroy'])->name('empleados.destroy');
+
+    // buscar empleados
+    Route::get('/empleados/searchEm', [EmpleadosController::class, 'searchEmple'])->name('empleados.search');
 
 });
 

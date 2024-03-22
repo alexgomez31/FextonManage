@@ -224,9 +224,6 @@ class EmpleadosController extends Controller
         return redirect()->route('empleados.index');
     }
 
-
-
-
     /**
      * Esta funcion permite eliminar empleado y todos sus pdfs asociados.
      *
@@ -252,6 +249,17 @@ class EmpleadosController extends Controller
 
         // Devolver una respuesta JSON indicando que el empleado se eliminó correctamente
         return response()->json(['success' => 'Empleado eliminado satisfactoriamente']);
+    }
+
+    public function searchEmple(Request $request)
+    {
+        $term = $request->input('term');
+
+        $empleados = Empleado::where('names', 'like', "%$term%")
+                              ->orWhere('numdoc', 'like', "%$term%")
+                              ->get();
+
+        return response()->json($empleados);
     }
 
 
