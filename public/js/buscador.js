@@ -103,76 +103,7 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Obtén el elemento de entrada de búsqueda
-//     const searchInput = document.getElementById('searchInputEmp');
-
-//     // Agrega un event listener para detectar cambios en el campo de búsqueda
-//     searchInput.addEventListener('input', function() {
-//         // Obtén el valor del campo de búsqueda
-//         const searchTerm = this.value;
-
-//         // Realiza una solicitud AJAX al servidor para obtener los resultados filtrados
-//         fetch(`/empleados/searchEm?term=${searchTerm}`)
-//             .then(response => response.json())
-//             .then(data => {
-//                 // Limpiar la tabla de empleados
-//                 const tableBody = document.getElementById('tableBody');
-//                 tableBody.innerHTML = '';
-
-//                 // Insertar los resultados de la búsqueda en la tabla
-//                 data.forEach(empleado => {
-//                     const row = document.createElement('tr');
-//                     row.innerHTML = `
-//                         <td>${empleado.id}</td>
-//                         <td>${empleado.names}</td>
-//                         <td>${empleado.documento}</td>
-//                         <td>${empleado.numdoc}</td>
-//                         <td>${empleado.cargo}</td>
-//                         <td>${empleado.fecha_ingreso}</td>
-//                         <td>${empleado.fecha_fin}</td>
-//                         <td>${empleado.nacionalidad}</td>
-//                         <td>${empleado.ciudad}</td>
-//                         <td>${empleado.direccion}</td>
-//                         <td>${empleado.telefono}</td>
-//                         <td>${empleado.email}</td>
-//                         <td>${empleado.document_soport ? '<span class="badge bg-success">PDF asociado</span>' : '<span class="badge bg-danger">Falta PDF</span>'}</td>
-//                         <td>${empleado.contrato_soport ? '<span class="badge bg-success">PDF asociado</span>' : '<span class="badge bg-danger">Falta PDF</span>'}</td>
-//                         <td>${empleado.carta_soport ? '<span class="badge bg-success">PDF asociado</span>' : '<span class="badge bg-danger">Falta PDF</span>'}</td>
-//                         <td>${empleado.otro_si_soport ? '<span class="badge bg-success">PDF asociado</span>' : '<span class="badge bg-danger">Falta PDF</span>'}</td>
-//                         <td>${empleado.liquidaciones_soport ? '<span class="badge bg-success">PDF asociado</span>' : '<span class="badge bg-danger">Falta PDF</span>'}</td>
-//                         <td>
-//                             <div class="button-container">
-//                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verEmpleadoModal${empleado.id}">
-//                                     <i class="fas fa-eye"></i>
-//                                 </button>
-
-//                                 <a href="/empleados/${empleado.id}/edit" class="btn btn-sm btn-warning">
-//                                     <i class="fas fa-edit"></i>
-//                                 </a>
-                          
-//                                 <button class="btn btn-danger delete-empleado" data-id="${empleado.id}" data-names="${empleado.names}" data-numdoc="${empleado.numdoc}" data-url="/empleados/${empleado.id}">
-//                                 <i class="fas fa-trash-alt"></i>
-//                             </button>
-
-
-//                             </div>
-//                         </td>
-//                     `;
-//                     tableBody.appendChild(row);
-//                 });
-//             })
-//             .catch(error => {
-//                 console.error('Error al realizar la solicitud AJAX:', error);
-//             });
-//     });
-// });
+// buscador de empleados 
 document.addEventListener('DOMContentLoaded', function() {
     // Obtén el elemento de entrada de búsqueda
     const searchInput = document.getElementById('searchInputEmp');
