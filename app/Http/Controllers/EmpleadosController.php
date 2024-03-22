@@ -58,11 +58,11 @@ class EmpleadosController extends Controller
             'direccion' => 'required|string',
             'telefono' => 'required|string',
             'email' => 'required|email',
-            'document_soport' => 'nullable|file|mimes:pdf|max:2048',
-            'contrato_soport' => 'nullable|file|mimes:pdf|max:2048',
-            'carta_soport' => 'nullable|file|mimes:pdf|max:2048',
-            'otro_si_soport' => 'nullable|file|mimes:pdf|max:2048',
-            'liquidaciones_soport' => 'nullable|file|mimes:pdf|max:2048',
+            'document_soport' => 'nullable|file|mimes:pdf|max:30720',
+            'contrato_soport' => 'nullable|file|mimes:pdf|max:30720',
+            'carta_soport' => 'nullable|file|mimes:pdf|max:30720',
+            'otro_si_soport' => 'nullable|file|mimes:pdf|max:30720',
+            'liquidaciones_soport' => 'nullable|file|mimes:pdf|max:30720',
         ]);
 
         // Inicializar las variables de soporte como null
@@ -210,15 +210,15 @@ class EmpleadosController extends Controller
                 }
                 // Guardar el nuevo archivo PDF en la ubicación deseada
                 $pdfPath = $request->file($campo)->store('public/pdfs');
-    
+
                 // Actualizar el campo correspondiente con la ruta relativa al directorio public
                 $empleado->$campo = 'pdfs/' . basename($pdfPath);
             }
         }
-    
+
         // Actualizar los demás campos del empleado excepto los campos de soporte PDF
         $empleado->update($request->except($camposSoporte));
-    
+
         // Redireccionar al usuario con un mensaje de éxito
         Session::flash('success', 'Empleado actualizado correctamente');
         return redirect()->route('empleados.index');

@@ -15,7 +15,7 @@
   {{-- <h1>empleados</h1> --}}
     <div class="container">
         <div class="tableproduc">
-            <h1 class="text-center text-primary mt-4">Empleados</h1>
+            <h1 class="text-center text-primary-green">Empleados</h1>
             <div class="tablelist">
                 <div class="container text-center">
                     <div class="row justify-content-end">
@@ -239,12 +239,13 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="verEmpleadoModalLabel">Detalles del Empleado - {{ $empleado->names }}</h5>
+                        <h2 class="modal-title" id="verEmpleadoModalLabel">Detalles del Empleado - {{ $empleado->names }}</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+                        <p><strong>Id</strong> {{ $empleado->id }}</p>
                         <p><strong>Documento:</strong> {{ $empleado->documento }}</p>
                         <p><strong>Número de Documento:</strong> {{ $empleado->numdoc }}</p>
                         <p><strong>Telefono</strong> {{ $empleado->telefono }}</p>
@@ -252,7 +253,25 @@
                         <p><strong>Dirección:</strong> {{ $empleado->direccion }}</p>
                         <p><strong>Nacionalidad:</strong> {{ $empleado->nacionalidad }}</p>
                         <p><strong>Cargo:</strong> {{ $empleado->cargo }}</p>
-                        <!-- Agrega más detalles según tus necesidades -->
+                        <p><strong>Fecha Inicio:</strong> {{ $empleado->fecha_ingreso }}</p>
+                        <p><strong>Fecha Fin:</strong> {{ $empleado->fecha_fin }}</p>
+                        <p><strong>Ciudad:</strong> {{ $empleado->ciudad }}</p>
+
+
+
+
+{{--
+
+
+
+
+
+                        <th scope="col">Nacionalidad</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th> --}}
+
 
                         <!-- Botones para ver los PDF asociados -->
                         <div class="modal-body">

@@ -11,7 +11,7 @@ class ProductosController extends Controller
 {
     /**
      * Muestra una lista paginada de productos.
-     * 
+     *
      * @return \Illuminate\View\View
      * @author Alexander Gomez <agpan007@gmail.com>
      */
@@ -41,7 +41,7 @@ class ProductosController extends Controller
 
     /**
      * Muestra el formulario para crear un nuevo producto.
-     * 
+     *
      * @return \Illuminate\View\View
      * @author Alexander Gomez <agpan007@gmail.com>
      */
@@ -53,7 +53,7 @@ class ProductosController extends Controller
 
     /**
      * Almacena un nuevo producto en la base de datos.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -68,7 +68,7 @@ class ProductosController extends Controller
             'alto' => 'required|string',
             'ramas' => 'required|string',
             'materiales'=> 'required|string',
-            'plano' => 'nullable|file|mimes:pdf|max:2048',
+            'plano' => 'nullable|file|mimes:pdf|max:30720',
         ]);
 
         // Inicializar la variable $planoPath como null
@@ -102,7 +102,7 @@ class ProductosController extends Controller
 
      /**
      * Permite observar el pdf asociado a producto.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -126,7 +126,7 @@ class ProductosController extends Controller
 
     /**
      * Vista para editar a dicho producto.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -138,7 +138,7 @@ class ProductosController extends Controller
 
     /**
      * funcion especifica para editar y enviar los nuevos campos actualizados de producto.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>
@@ -174,7 +174,7 @@ class ProductosController extends Controller
 
      /**
      * Esta funcion permite eliminar un producto y su pdf asociado.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      * @author Alexander Gomez <agpan007@gmail.com>

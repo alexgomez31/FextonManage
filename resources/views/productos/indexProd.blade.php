@@ -107,11 +107,11 @@
                 <td>
                   @if($producto->plano)
                       <a href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
-                          <i class="fas fa-eye"></i> Ver PDF
+                          <i class="fas fa-eye"></i>
                       </a>
                   @else
                       <button class="btn btn-sm btn-warning show-pdf-alert" data-producto-id="{{ $producto->id }}">
-                          <i class="fas fa-exclamation-triangle"></i> No hay PDF
+                          <i class="fas fa-exclamation-triangle"></i>
                       </button>
                   @endif
                   <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
@@ -186,7 +186,7 @@
                   text: successMessage,
                   icon: 'success'
               });
-          }, 1000); 
+          }, 1000);
       }
     </script>
   </div>
