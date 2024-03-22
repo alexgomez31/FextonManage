@@ -1,39 +1,51 @@
-
 @extends('adminlte::page')
 @extends('plantilla.plantillaDashboard')
+
 @section('title', 'Dashboard')
 @section('plugins.SweetAlert2', true)
-@section('content_header')
-@section('content')
 
+@section('content_header')
+
+@stop
+
+@section('content')
 
 {{-- links --}}
 <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
-<body>
+<div class="fondo">
+    <div class="container1">
+        <div class="container-fluid d-flex justify-content-center align-items-end mt-75"> <!-- Ajusta el margen inferior -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>150</h3>
+                    <strong class="p1">Productos</strong>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <a href="{{route('product.index')}}" class="small-box-footer">
+                    Más información <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
 
-<div class="d-flex justify-content-center">
-    <div class="small-box bg-info">
-        <div class="inner">
-        <h3>150</h3>
-        <p>Productos</p>
+            <div class="small-box bg-info ml-3">
+                <div class="inner">
+                    <h3>150</h3>
+                    <strong class="p1">Empleados</strong>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <a href="{{route('product.index')}}" class="small-box-footer">
+                    Más información <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
         </div>
-        <div class="icon">
-        <i class="fas fa-shopping-cart"></i>
-        </div>
-        <a href="{{route('product.index')}}" class="small-box-footer">
-        Mas informacion <i class="fas fa-arrow-circle-right" ></i>
-        </a>
     </div>
-    <div class="info-box bg-success ml-4">
-        <span class="info-box-icon"><i class="far fa-flag"></i></span>
-        <div class="info-box-content">
-          <span class="info-box-text">Bookmarks</span>
-          <span class="info-box-number">410</span>
-        </div>
-      </div>
-    </div>
-    <script>
+</div>
+
+<script>
     const successMessage = '{{ Session::get('success') }}';
     if (successMessage) {
         setTimeout(function() {
@@ -42,21 +54,8 @@
                 text: successMessage,
                 icon: 'success'
             });
-        }, 2000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
+        }, 2000); // Esperar 2000 milisegundos (2 segundos) antes de mostrar la alerta
     }
-  </script>
-
-
-
-
-
-  </div>
-</body>
-
-
-
-
-
+</script>
 
 @stop
-

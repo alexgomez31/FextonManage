@@ -1,8 +1,32 @@
-body {
+.container-fluid {
+    max-width: 100%;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.small-box {
+    width: 350px;
+    height: 200px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.container1 {
+    margin-top: 85px;
+}
+
+.small-box-footer {
+    font-size: 25px;
+}
+
+.fondo {
     background-image: url('../img/AdminLTELogo.png');
     background-size: 70%;
     background-position: center top;
     background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
+    margin-top: 3opx;
+    padding: 350px;
+}
+.p1{
+    font-size: 26px;
 }
