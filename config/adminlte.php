@@ -319,13 +319,13 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'MENU',
+             'text' => 'MENU',
             'url' => 'dashboard',
-            'icon' => 'far fa-fw fa-home',
+            'icon' => 'fas fa-home',
             'label_color' => 'success',
         ],
 
-        ['header' => 'producto'],
+        ['header' => 'PRODUCTOS'],
 
         [
             'text' => 'Productos',
@@ -336,7 +336,7 @@ return [
         ],
         ['header' => 'EMPLEADOS '],
         [
-            'text' => 'employe',
+            'text' => 'Empleados',
             'url' => 'empleados',
             'icon' => 'fas fa-fw fa-users',
 

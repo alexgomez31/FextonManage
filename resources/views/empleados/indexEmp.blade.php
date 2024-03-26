@@ -279,7 +279,7 @@
                                             <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-warning">
+                                        <button class="btn btn-Light">
                                             <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
@@ -291,7 +291,7 @@
                                             <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-warning">
+                                        <button class="btn btn-Light">
                                             <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
@@ -303,7 +303,7 @@
                                             <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-warning">
+                                        <button class="btn btn-Light">
                                             <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
@@ -315,7 +315,7 @@
                                             <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-warning">
+                                        <button class="btn btn-Light">
                                             <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
@@ -327,7 +327,7 @@
                                             <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-warning">
+                                        <button class="btn btn-Light">
                                             <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
@@ -372,7 +372,6 @@
                 });
             }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
         }
-
     </script>
 
 

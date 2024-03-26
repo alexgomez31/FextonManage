@@ -51,11 +51,10 @@
     color: black;
 }
 
-.btn1.btn-warning {
-    background-color: #ff9307dc;
+.btn1.btn-success {
     color: #ffffff;
 }
-.btn1.btn1.btn-warning:hover{
+.btn1.btn1.btn1.btn-success:hover{
     color: black;
 }
 .btn1.btn-danger {
