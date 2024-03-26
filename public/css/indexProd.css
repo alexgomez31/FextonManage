@@ -2,3 +2,56 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
 }
+.btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.btn1 i {
+    margin-right: 5px;
+
+}
+
+
+.btn1.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn1.btn-warning {
+    background-color: #ff9307dc;
+    color: #ffffff;
+}
+
+.btn1.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+.btn1 {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 7px 7px;
+    border-radius: 5px;
+
+}
+
+.btn1:hover{
+    color: rgb(0, 0, 0);
+}
+
+.action-buttons {
+    display: flex;
+}
+
+.action-buttons .btn1 {
+    margin-right: 5px;
+}

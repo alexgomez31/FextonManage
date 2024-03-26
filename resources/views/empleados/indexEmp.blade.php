@@ -36,7 +36,7 @@
                 </div>
 
 
-                <div class="table-responsive"> <!-- Agregar la clase table-responsive -->
+                <div class="table-responsive">
                     <table id="empleados" class="table table-striped table-bordered mt-4">
                         <thead class="table-primary">
                         <tr>
@@ -189,18 +189,18 @@
 
                                     <td>
                                         <div class="button-container">
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verEmpleadoModal{{ $empleado->id }}">
+                                            <button type="button" class="btn1 btn-primary" data-toggle="modal" data-target="#verEmpleadoModal{{ $empleado->id }}">
                                                 <i class="fas fa-eye"></i>
                                             </button>
 
-                                            <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn1 btn-sm btn-warning">
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
                                             {{-- <button type="submit" class="btn btn-sm btn-danger delete-product">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button> --}}
-                                            <button class="btn btn-danger delete-empleadoo" data-id="{{ $empleado->id }}" data-names="{{ $empleado->names }}" data-numdoc="{{ $empleado->numdoc }}">
+                                            <button class="btn1 btn-danger delete-empleadoo" data-id="{{ $empleado->id }}" data-names="{{ $empleado->names }}" data-numdoc="{{ $empleado->numdoc }}">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
 

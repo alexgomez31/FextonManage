@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('documento');
             $table->string('numdoc');
             $table->string('cargo');
-            $table->string('fecha_ingreso');
-            $table->string('fecha_fin');
+            $table->date('fecha_ingreso');
+            $table->date('fecha_fin');
             $table->string('nacionalidad');
             $table->string('ciudad');
             $table->string('direccion');

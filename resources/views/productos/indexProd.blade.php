@@ -101,26 +101,29 @@
                   @if($producto->plano)
                   <span class="badge bg-success"><i class="fas fa-file-pdf"></i> PDF Agregado</span>
                   @else
-                      <span class="badge bg-danger">Falta PDF</span>
+                  <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> Falta PDF</span>
                   @endif
                 </td>
                 <td>
-                  @if($producto->plano)
-                      <a href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn btn-sm btn-primary">
-                          <i class="fas fa-eye"></i>
-                      </a>
-                  @else
-                      <button class="btn btn-sm btn-warning show-pdf-alert" data-producto-id="{{ $producto->id }}">
-                          <i class="fas fa-exclamation-triangle"></i>
-                      </button>
-                  @endif
-                  <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-sm btn-warning">
-                      <i class="fas fa-edit"></i>
-                  </a>
-                  <button type="submit" class="btn btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">
-                      <i class="fas fa-trash-alt"></i>
-                  </button>
+                    <div class="action-buttons">
+                        @if($producto->plano)
+                            <a href="{{ route('productos.show', $producto->id) }}" target="_blank" class="btn1 btn-sm btn-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        @else
+                            <button class="btn1 btn-sm btn-warning show-pdf-alert" data-producto-id="{{ $producto->id }}">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </button>
+                        @endif
+                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn1 btn-sm btn-warning">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <button type="submit" class="btn1 btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
                 </td>
+
               </tr>
             @endforeach
           </tbody>
@@ -150,20 +153,6 @@
       </div>
     </div>
 
-
-    {{-- <script>
-      $(document).ready(function() {
-          $('.show-pdf-alert').click(function() {
-              var productoId = $(this).data('producto-id');
-              Swal.fire({
-                  title: 'Alerta',
-                  text: 'No hay plano cargado para este producto.',
-                  icon: 'warning',
-                  confirmButtonText: 'OK'
-              });
-          });
-      });
-    </script> --}}
 
     <script>
       $(document).ready(function() {
