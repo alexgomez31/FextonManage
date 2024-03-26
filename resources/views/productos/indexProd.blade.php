@@ -4,11 +4,12 @@
 @section('plugins.SweetAlert2', true)
 @section('content_header')
 
-    {{-- <p>Administracion de articulos</p> --}}
-
+<link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+<link href="{{ asset('css/indexProd.css') }}" rel="stylesheet">
 
 @section('content')
-<link href="{{ asset('css/indexProd.css') }}" rel="stylesheet">
+
+
   {{-- <h1>Productos</h1> --}}
   <div class="container">
     <div class="tableproduc">
@@ -115,7 +116,7 @@
                                 <i class="fas fa-exclamation-triangle"></i>
                             </button>
                         @endif
-                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn1 btn-sm btn-warning">
+                        <a href="{{ route('productos.edit', $producto->id) }}" class="btn1 btn-sm btn-success">
                             <i class="fas fa-edit"></i>
                         </a>
                         <button type="submit" class="btn1 btn-sm btn-danger delete-product" data-id="{{ $producto->id }}" data-tipoproducto="{{ $producto->tipoproducto }}" data-referencia="{{ $producto->referencia }}">

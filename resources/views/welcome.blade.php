@@ -13,8 +13,11 @@
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+    {{-- favicon --}}
+    <link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+
     <!-- Custom CSS -->
-    
+
     <link rel="stylesheet" href="{{ asset('css/bienvenido.css') }}">
 </head>
 <body class="antialiased bg-gray-100 dark:bg-gray-900 selection:bg-red-500 selection:text-white">

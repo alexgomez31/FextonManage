@@ -3,6 +3,8 @@
 @section('title', 'crear producto')
 @section('content_header')
 
+<link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+
     {{-- <p>Administracion de articulos</p> --}}
 
 @if (session('status'))

@@ -1,4 +1,10 @@
 <x-guest-layout>
+    <!-- Agrega el enlace del favicon aquí -->
+    <head>
+        <link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+        <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    </head>
+
     <div class="container">
 
         <!-- Session Status -->
@@ -6,10 +12,6 @@
 
         <form method="POST" action="{{ route('login') }}" class="form">
             @csrf
-
-            <head>
-                <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-            </head>
 
             <!-- Email Address -->
             <div class="form-group">
@@ -33,10 +35,9 @@
                 </label>
             </div>
 
-                <x-primary-button class="ms-3">
-                    {{ __('INGRESAR') }}
-                </x-primary-button>
-            </div>
+            <x-primary-button class="ms-3">
+                {{ __('INGRESAR') }}
+            </x-primary-button>
         </form>
     </div>
 </x-guest-layout>

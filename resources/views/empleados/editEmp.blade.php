@@ -14,6 +14,8 @@
 
 
     <link href="{{ asset('css/editEmp.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+
 
 
 @section('content')
@@ -108,7 +110,7 @@
                             <!-- Documento de Soporte -->
                             <div class="form-group">
                                 <label for="document_soport">
-                                    <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                    <i class="fas fa-file-pdf pdf"></i> <!-- Icono de PDF -->
                                     Documento de Identidad (PDF)
                                 </label>
                                 <input id="document_soport" type="file" class="form-control-file" name="document_soport">
@@ -117,7 +119,7 @@
                             <!-- Contrato de Soporte -->
                             <div class="form-group">
                                 <label for="contrato_soport">
-                                    <i class="fas fa-file-contract"></i> <!-- Icono de Contrato -->
+                                    <i class="fas fa-file-pdf pdf"></i> <!-- Icono de Contrato -->
                                     Contrato Laboral (PDF)
                                 </label>
                                 <input id="contrato_soport" type="file" class="form-control-file" name="contrato_soport">
@@ -126,7 +128,7 @@
                             <!-- Carta de Soporte -->
                             <div class="form-group">
                                 <label for="carta_soport">
-                                    <i class="fas fa-file-alt"></i> <!-- Icono de Carta -->
+                                    <i class="fas fa-file-pdf pdf"></i> <!-- Icono de Carta -->
                                     Cartas de Inicio y fin de Contrato Laboral(PDF)
                                 </label>
                                 <input id="carta_soport" type="file" class="form-control-file" name="carta_soport">
@@ -135,7 +137,7 @@
                             <!-- Otro Si de Soporte -->
                             <div class="form-group">
                                 <label for="otro_si_soport">
-                                    <i class="fas fa-file"></i> <!-- Icono de Archivo Genérico -->
+                                    <i class="fas fa-file-pdf pdf"></i> <!-- Icono de Archivo Genérico -->
                                     Otro Si al Contrato Laboral (PDF)
                                 </label>
                                 <input id="otro_si_soport" type="file" class="form-control-file" name="otro_si_soport">
@@ -144,7 +146,7 @@
                             <!-- Liquidaciones de Soporte -->
                             <div class="form-group">
                                 <label for="liquidaciones_soport">
-                                    <i class="fas fa-file-invoice-dollar"></i> <!-- Icono de Liquidaciones -->
+                                    <i class="fas fa-file-pdf pdf"></i> <!-- Icono de Liquidaciones -->
                                     Liquidaciones(PDF)
                                 </label>
                                 <input id="liquidaciones_soport" type="file" class="form-control-file" name="liquidaciones_soport">

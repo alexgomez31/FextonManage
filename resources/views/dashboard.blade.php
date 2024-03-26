@@ -1,6 +1,8 @@
 @extends('adminlte::page')
 @extends('plantilla.plantillaDashboard')
 
+<link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+
 @section('Menu', 'Menu')
 @section('plugins.SweetAlert2', true)
 

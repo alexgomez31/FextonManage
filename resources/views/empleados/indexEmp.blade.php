@@ -7,6 +7,8 @@
 
 
 <link rel="stylesheet" href="{{ asset('css/indexEmp.css') }}">
+<link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+
     {{-- <p>Administracion de articulos</p> --}}
 
 
@@ -193,7 +195,7 @@
                                                 <i class="fas fa-eye"></i>
                                             </button>
 
-                                            <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn1 btn-sm btn-warning">
+                                            <a href="{{ route('empleados.edit', ['empleado' => $empleado->id]) }}" class="btn1 btn-sm btn-success">
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
@@ -267,67 +269,66 @@
 
                         <!-- Botones para ver los PDF asociados -->
                         <div class="modal-body">
-                            {{-- <p><strong>Documento:</strong> {{ $empleado->documento }}</p> --}}
-                            <!-- Agrega más detalles según tus necesidades -->
+
 
                             <!-- Listar todos los tipos de soporte disponibles -->
                             <div class="btn-container">
                                 <div class="btn-wrapper">
                                     @if ($empleado->document_soport)
-                                        <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'document_soport')">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-success" onclick="mostrarPdf('{{ $empleado->id }}', 'document_soport')">
+                                            <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-primary disabled">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-warning">
+                                            <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
                                     <p>Documento De Identidad</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->contrato_soport)
-                                        <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'contrato_soport')">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-success" onclick="mostrarPdf('{{ $empleado->id }}', 'contrato_soport')">
+                                            <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-primary disabled">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-warning">
+                                            <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
                                     <p>Contrato Laboral</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->carta_soport)
-                                        <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'carta_soport')">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-success" onclick="mostrarPdf('{{ $empleado->id }}', 'carta_soport')">
+                                            <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-primary disabled">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-warning">
+                                            <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
                                     <p>Cartas de Inicio y Fin de Contrato</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->otro_si_soport)
-                                        <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'otro_si_soport')">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-success" onclick="mostrarPdf('{{ $empleado->id }}', 'otro_si_soport')">
+                                            <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-primary disabled">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-warning">
+                                            <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
                                     <p>Otro Si al contrato Laboral</p>
                                 </div>
                                 <div class="btn-wrapper">
                                     @if ($empleado->liquidaciones_soport)
-                                        <button class="btn btn-primary" onclick="mostrarPdf('{{ $empleado->id }}', 'liquidaciones_soport')">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-success" onclick="mostrarPdf('{{ $empleado->id }}', 'liquidaciones_soport')">
+                                            <i class="fas fa-file-pdf green-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @else
-                                        <button class="btn btn-primary disabled">
-                                            <i class="fas fa-file-pdf"></i> <!-- Icono de PDF -->
+                                        <button class="btn btn-warning">
+                                            <i class="fas fa-exclamation-triangle yellow-icon"></i> <!-- Icono de PDF -->
                                         </button>
                                     @endif
                                     <p>Liquidaciones</p>
@@ -371,6 +372,7 @@
                 });
             }, 1000); // Esperar 1000 milisegundos (1 segundo) antes de mostrar la alerta
         }
+
     </script>
 
 

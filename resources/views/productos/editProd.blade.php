@@ -3,6 +3,7 @@
 @section('title', 'editar product')
 @section('plugins.SweetAlert2', true)
 @section('content_header')
+<link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
 
     {{-- <p>Administracion de articulos</p> --}}
 

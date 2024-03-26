@@ -5,6 +5,8 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/createEmp.css') }}">
+<link rel="shortcut icon" href="{{ asset('/img/AdminLTELogo.png') }}" type="image/png">
+
 
 {{-- <p>Administracion de articulos</p> --}}
 
