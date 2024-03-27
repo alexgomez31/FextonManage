@@ -8,6 +8,7 @@ use App\Http\Controllers\userController;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,9 +80,12 @@ Route::middleware('auth')->group(function () {
 
     // buscar empleados
     Route::get('/empleados/searchEm', [EmpleadosController::class, 'searchEmple'])->name('empleados.search');
-    
+
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    //cerrar sesion
+    Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
 });

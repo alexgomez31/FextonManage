@@ -1,11 +1,9 @@
 .containerr {
-
     display: flex;
     width: 100%;
-    /* height: 500px; */
-    /* max-width: 99%; */
+    height: 800px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly; /* Ajusta el espacio entre los elementos */
     position: relative;
     overflow: hidden;
     background-color: #aee2e225;
@@ -13,86 +11,52 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
     border: 0.1px solid rgba(128, 128, 128, 0.178);
 
-  }
-.text-center{
-    color:  rgb(5, 99, 25);
-}
-  .containerrra{
-    background-color: rgb(5, 99, 25);
-    width: 100%;
-    height: 10px;
-
-  }
-  .encabezado {
-    background-color: rgba(226, 226, 226, 0.616);
-    height: 7rem;
-
 }
 
-  .left {
-    width: 66%;
+.left,
+.right {
+    flex: 1; /* Hace que ocupen el mismo espacio */
     height: 100%;
-  }
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del contenido */
+    justify-content: center;
+    align-items: center;
+}
 
-  .form {
+.encabezado {
+    background-color: rgba(226, 226, 226, 0.616);
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.form {
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-     /* height: 100% !important; */
-   /* width: 100%; */
-    left: 0;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
     backdrop-filter: blur(20px);
     position: relative;
-    align-items: center;
-  }
+}
 
-  .form::before {
-    position: absolute;
-    content: "";
-    width: 40%;
-    height: 40%;
-    right: 1%;
-    z-index: -1;
-    background: radial-gradient(
-      circle,
-      #62f2e6 20%,
-      rgb(235, 235, 235) 60%,
+.input-blockk {
+    margin-bottom: 1rem; /* Espacio entre los elementos del formulario */
+}
 
-      rgb(235, 26, 26) 100%
-    );
-    filter: blur(70px);
-    border-radius: 50%;
-  }
+.label {
+    margin-bottom: 0.5rem; /* Espacio entre las etiquetas y los campos de entrada */
+}
 
-  .right {
-    width: 34%;
-    height: 100%;
-    z-index: 1;
-  }
+.button {
+    margin-top: 1rem; /* Espacio sobre el botón */
+}
 
-  .img {
-    width: 100%;
-    height: 100%;
-  }
+.img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+}
 
-  .containerr::after {
-    position: absolute;
-    content: "";
-    width: 80%;
-    height: 80%;
-    right: -40%;
-    background: rgb(157, 203, 182);
-    background: radial-gradient(
-      circle,
-      rgb(157, 203, 196) 61%,
-      rgb(5, 99, 25)
-    );
-    z-index: 0;
-    border-radius: 50%;
-    margin-top: 40px;
-  }
-/*
   .input, */
   .button {
     background: rgba(253, 253, 253, 0);
@@ -160,7 +124,7 @@
     outline: none;
     padding: 0px 7px;
     border-radius: 6px;
-    color: #475ca4;
+    color: #0000009c;
     font-size: 15px;
     background-color: transparent;
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
@@ -228,6 +192,7 @@
     height: 1rem;
   }
 
+.text-center{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-
-
+}

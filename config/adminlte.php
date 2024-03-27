@@ -1,8 +1,10 @@
+
+
 <?php
 
 return [
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Title
     |--------------------------------------------------------------------------
@@ -64,7 +66,7 @@ return [
     */
 
 
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/Logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,11 +88,10 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/Logo.png',
             'alt' => 'Auth Logo',
             'class' => '',
-            'width' => 150,
-            'height' => 150,
+
         ],
     ],
 
@@ -112,8 +113,8 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'vendor/adminlte/dist/img/Logo.png',
+            'alt' => 'Logo.png',
             'effect' => 'animation__shake',
             'width' => 600,
             'height' => 300,
@@ -293,6 +294,8 @@ return [
     |
     */
 
+
+
     'menu' => [
         // Navbar items:
         [
@@ -305,9 +308,6 @@ return [
             'topnav_right' => true,
         ],
 
-
-
-
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
@@ -319,7 +319,7 @@ return [
             'can' => 'manage-blog',
         ],
         [
-             'text' => 'MENU',
+            'text' => 'MENU',
             'url' => 'dashboard',
             'icon' => 'fas fa-home',
             'label_color' => 'success',
@@ -331,69 +331,30 @@ return [
             'text' => 'Productos',
             'url' => 'producto',
             'icon' => 'fas fa-fw fa-tree',
-
-
         ],
-        ['header' => 'EMPLEADOS '],
+        ['header' => 'EMPLEADOS'],
         [
             'text' => 'Empleados',
             'url' => 'empleados',
             'icon' => 'fas fa-fw fa-users',
+        ],
 
+        ['header' => 'PERFIL'],
+        [
+            'text' => 'Perfil',
+            'url' => 'profile',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+
+
+        [
+            'header' => 'CERRAR SESION',
         ],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'empleado'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'text' => 'SALIR',
+            'url' => 'logout',
+            'icon' => 'fas fa-sign-out-alt',
+            'class' => 'logout-link',
         ],
     ],
 
@@ -537,6 +498,7 @@ return [
         ],
     ],
 
+
     /*
     |--------------------------------------------------------------------------
     | Livewire
@@ -550,4 +512,6 @@ return [
     */
 
     'livewire' => false,
+
 ];
+

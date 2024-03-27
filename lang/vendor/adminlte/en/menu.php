@@ -12,7 +12,7 @@ return [
     'level_one' => 'Level 1',
     'level_two' => 'Level 2',
     'level_three' => 'Level 3',
-    'empleado' => 'EMPLEADOS',
+    'perfil' => 'PERFIL',
     'important' => 'Important',
     'warning' => 'Warning',
     'information' => 'Information',

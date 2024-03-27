@@ -27,12 +27,12 @@
     <script src="{{ asset('fontawesome/js/fontawesome.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script> --}}
-    
-    
+
+
     {{-- Iconos --}}
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
 
-    <title>Fexton</title>
+    <title>Perfil Admin</title>
 
 </head>
 <body id="login-body">
@@ -43,14 +43,14 @@
 
     <script src="{{ asset('js/alerta.js') }}"></script>
     <script src="{{ asset('js/buscador.js') }}"></script>
-    
-    
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    
+
     @yield('scripts')
 
 
