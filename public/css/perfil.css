@@ -6,7 +6,7 @@
     justify-content: space-evenly; /* Ajusta el espacio entre los elementos */
     position: relative;
     overflow: hidden;
-    background-color: #aee2e225;
+    background-color: #61bd9723;
     border-radius: 15px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
     border: 0.1px solid rgba(128, 128, 128, 0.178);
@@ -24,7 +24,7 @@
 }
 
 .encabezado {
-    background-color: rgba(226, 226, 226, 0.616);
+    background-color: rgba(87, 180, 160, 0.199);
     padding: 1rem;
     border-radius: 15px;
     margin-bottom: 1rem;
@@ -41,11 +41,13 @@
 }
 
 .input-blockk {
-    margin-bottom: 1rem; /* Espacio entre los elementos del formulario */
+    margin-bottom: 1rem;
+
 }
 
 .label {
-    margin-bottom: 0.5rem; /* Espacio entre las etiquetas y los campos de entrada */
+    margin-bottom: 0.5rem;
+    font-size: 20px;
 }
 
 .button {
@@ -81,9 +83,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 22px;
     box-shadow: 2px 4px 8px rgba(70, 70, 70, 0.178);
+    border-radius: 16px;
   }
   .button:hover{
-    background-color: brown;
+    background-color: rgba(196, 28, 28, 0.788);
 }
 
   a {

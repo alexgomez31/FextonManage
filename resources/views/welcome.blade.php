@@ -29,7 +29,7 @@
             </div>
 
             <div class="text-gray-700 dark:text-gray-300 mb-6">
-                <p>Sistema de Administración y Gestión de productos para la empresa FEXTON SAS, que actúe como un repositorio digital eficiente y versátil, proporcionando herramientas para el registro detallado de productos y la gestión de recursos humanos.</p>
+                <p>Sistema de administración, gestión de productos y empleados de la empresa FEXTON S.A.S, actúa como un repositorio digital eficiente y versátil, proporcionando herramientas para el registro detallado de productos y empleados de la empresa.</p>
             </div>
 
             <div class="flex justify-center mb-6">
