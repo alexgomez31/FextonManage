@@ -17,7 +17,7 @@
   {{-- <h1>empleados</h1> --}}
     <div class="container">
         <div class="tableproduc">
-            <h1 class="text-center text-primary-green">Empleados</h1>
+            <h1 class="text-center text-success">Empleados</h1>
             <div class="tablelist">
                 <div class="container text-center">
                     <div class="row justify-content-end">
